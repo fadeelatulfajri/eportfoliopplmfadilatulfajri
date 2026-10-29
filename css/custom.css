@@ -1,0 +1,1126 @@
+/* ==========================================================================
+   EPORTFOLIO 1 PPL MANDIRI - FADILATUL FAJRI
+   Design System: Editorial Minimalist & Warm Aesthetic (Swiss Design)
+   Palet: Warm Ivory (#F4F0EA), Charcoal (#262626), Burnt Orange (#E65F2B), Hairline (#D8D1C5)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #F4F0EA;
+  --bg-secondary: #F2EDE4;
+  --bg-card: #FFFFFF;
+  --bg-tint-orange: #FAECE5;
+  
+  --text-primary: #262626;
+  --text-soft: #1A1A1A;
+  --text-muted: #66615B;
+  --text-faint: #8E887F;
+
+  --accent-terracotta: #E65F2B;
+  --accent-terracotta-dark: #C84D1D;
+  --accent-terracotta-light: #E76F3B;
+
+  --border-hairline: #D8D1C5;
+  --border-hairline-dark: #C4BCAD;
+
+  --font-heading: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings & Editorial Typography */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Editorial Large Numbers */
+.editorial-number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--accent-terracotta);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+/* Editorial Photo Treatment */
+.editorial-photo {
+  filter: grayscale(100%) contrast(110%);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-photo:hover {
+  filter: grayscale(40%) contrast(105%);
+}
+
+/* Gallery Photo Filter (grayscale 20%, contrast 105%) */
+.editorial-gallery-img {
+  filter: grayscale(20%) contrast(105%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.editorial-gallery-img:hover {
+  filter: grayscale(0%) contrast(105%);
+  transform: scale(1.02);
+}
+
+/* Gradient Fade / Mask-Image Utilities */
+.mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+}
+
+.mask-fade-top-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+
+.mask-fade-right {
+  -webkit-mask-image: linear-gradient(to right, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 70%, transparent 100%);
+}
+
+.mask-fade-left {
+  -webkit-mask-image: linear-gradient(to left, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 70%, transparent 100%);
+}
+
+/* Frame Styles: Arch / Half-Rounded */
+.arch-frame {
+  border-radius: 180px 180px 4px 4px;
+}
+
+.arch-single {
+  border-radius: 120px 4px 4px 4px;
+}
+
+.rounded-editorial {
+  border-radius: 6px;
+}
+
+/* Editorial Hairline Borders */
+.border-hairline {
+  border-color: var(--border-hairline);
+}
+
+.border-hairline-t {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.border-hairline-b {
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.border-hairline-l {
+  border-left: 1px solid var(--border-hairline);
+}
+
+.border-hairline-r {
+  border-right: 1px solid var(--border-hairline);
+}
+
+/* Minimalist Swiss Grid Pattern */
+.bg-swiss-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(216, 209, 197, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(216, 209, 197, 0.35) 1px, transparent 1px);
+}
+
+/* Editorial Buttons */
+.btn-editorial-solid {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-terracotta);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-solid:hover {
+  background-color: var(--accent-terracotta-dark);
+  border-color: var(--accent-terracotta-dark);
+}
+
+.btn-editorial-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.btn-editorial-outline:hover {
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  background-color: var(--bg-card);
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline-dark);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}
+
+/* ==========================================================================
+   INTERACTIVE NAVBAR & LIQUID WATER BLOB ANIMATION
+   ========================================================================== */
+
+/* Main Nav Wrapper - Sticky container */
+.main-nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.75rem 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* Brand Wordmark Lurus & Rapi Sejajar */
+.brand-wordmark-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .brand-wordmark-link {
+    font-size: 1.05rem;
+    gap: 0.45rem;
+  }
+}
+
+/* Sun Icon menggantikan titik pada huruf i di kata Fajri */
+.sun-dot-icon {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  color: var(--accent-terracotta);
+  fill: var(--accent-terracotta);
+  pointer-events: none;
+}
+
+/* Kacamata di atas kata vision */
+.glasses-icon-wrap {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 14px;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+/* Nav Container - Kotak dengan ujung tumpul saat awal */
+.main-nav-container {
+  pointer-events: auto;
+  width: fit-content;
+  max-width: 96vw;
+  margin: 0 auto;
+  background-color: rgba(244, 240, 234, 0.98);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px; /* Kotak ujung tumpul */
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  box-shadow: 0 2px 10px -2px rgba(38, 38, 38, 0.04);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+  .main-nav-container {
+    padding: 0.55rem 1.75rem;
+    gap: 1.75rem;
+  }
+}
+
+/* Nav Container - Menggantung berbentuk oval saat discroll */
+.main-nav-wrapper.is-scrolled {
+  padding-top: 0.75rem;
+}
+
+.main-nav-wrapper.is-scrolled .main-nav-container {
+  width: fit-content;
+  max-width: 95vw;
+  border-radius: 9999px; /* Bentuk oval / pill menggantung */
+  background-color: rgba(244, 240, 234, 0.93);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: var(--border-hairline);
+  box-shadow: 0 12px 32px -4px rgba(38, 38, 38, 0.1), 0 4px 8px -2px rgba(38, 38, 38, 0.04);
+  padding: 0.45rem 1.75rem; /* Memberikan ruang lapang simetris agar Kontak aman di dalam lengkungan oval */
+  gap: 1.25rem;
+}
+
+@media (min-width: 1280px) {
+  .main-nav-wrapper.is-scrolled .main-nav-container {
+    padding: 0.45rem 2.25rem; /* Ekstra padding di ujung kanan/kiri agar Kontak berada rapi di dalam */
+    gap: 2rem;
+  }
+}
+
+/* Track Penampung Link & Liquid Blob */
+.nav-links-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.35rem;
+}
+
+/* Gumpalan Air (Liquid Water Blob) */
+.nav-liquid-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(230, 95, 43, 0.18) 0%, rgba(230, 95, 43, 0.09) 100%);
+  border: 1px solid rgba(230, 95, 43, 0.32);
+  box-shadow: 0 6px 16px rgba(230, 95, 43, 0.15), inset 0 1px 3px rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: left 0.4s cubic-bezier(0.25, 1.25, 0.35, 1.15),
+              width 0.4s cubic-bezier(0.25, 1.25, 0.35, 1.15),
+              top 0.25s ease,
+              height 0.25s ease,
+              opacity 0.22s ease,
+              transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: left, width, transform;
+}
+
+/* Efek Peregangan Cair Saat Bergerak (Liquid Elastic Stretch) */
+.nav-liquid-blob.is-stretching-right {
+  transform: scaleX(1.16) scaleY(0.92);
+}
+
+.nav-liquid-blob.is-stretching-left {
+  transform: scaleX(1.16) scaleY(0.92);
+}
+
+/* Nav Link Item */
+.nav-link-item {
+  position: relative;
+  z-index: 2;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  border-radius: 9999px;
+  transition: color 0.22s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1280px) {
+  .nav-link-item {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.825rem;
+  }
+}
+
+.nav-link-item:hover {
+  color: var(--accent-terracotta);
+}
+
+.nav-link-item.is-active {
+  color: var(--accent-terracotta);
+  font-weight: 700;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   FIGMA CANVAS HERO (SECTION 1) STYLES
+   ========================================================================== */
+
+/* Dot Grid Background */
+.figma-canvas-bg {
+  background-color: #FAFAFA;
+  background-image: radial-gradient(circle, #CBD5E1 1.25px, transparent 1.25px);
+  background-size: 26px 26px;
+  background-position: 0 0;
+}
+
+/* Figma Selection Bounding Box */
+.figma-selection-box {
+  position: relative;
+  border: 1.5px solid #0D99FF;
+  transform: rotate(-2.8deg);
+  display: inline-block;
+  user-select: none;
+  background: transparent;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.figma-selection-box:hover {
+  transform: rotate(-2deg);
+}
+
+/* Top Label Tag: PPL Mandiri */
+.figma-top-tag {
+  position: absolute;
+  top: -29px;
+  left: 6px;
+  border: 1px solid #0D99FF;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1px 7px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  line-height: 1.2;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Small dot handles on the tag */
+.figma-tag-dot-tl {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 5px;
+  height: 5px;
+  background-color: #0D99FF;
+  border-radius: 9999px;
+}
+
+.figma-tag-dot-br {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 5px;
+  height: 5px;
+  background-color: #0D99FF;
+  border-radius: 9999px;
+}
+
+/* Bounding Box Corner & Mid Handles (White squares with blue border) */
+.figma-handle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #0D99FF;
+  z-index: 10;
+}
+
+.figma-handle.handle-tl { top: -4.5px; left: -4.5px; }
+.figma-handle.handle-tr { top: -4.5px; right: -4.5px; }
+.figma-handle.handle-bl { bottom: -4.5px; left: -4.5px; }
+.figma-handle.handle-br { bottom: -4.5px; right: -4.5px; }
+.figma-handle.handle-tc { top: -4.5px; left: 50%; transform: translateX(-50%); }
+.figma-handle.handle-bc { bottom: -4.5px; left: 50%; transform: translateX(-50%); }
+.figma-handle.handle-ml { top: 50%; left: -4.5px; transform: translateY(-50%); }
+.figma-handle.handle-mr { top: 50%; right: -4.5px; transform: translateY(-50%); }
+
+/* Interior Baseline Line */
+.figma-baseline-line {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background-color: #0D99FF;
+  pointer-events: none;
+}
+
+/* Center White Cursor */
+.figma-white-cursor {
+  position: absolute;
+  bottom: 8px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+/* Right User Cursor + Blue Badge (Fadilatul Fajri) */
+.figma-user-cursor-wrap {
+  position: absolute;
+  bottom: -18px;
+  right: 18px;
+  display: flex;
+  align-items: flex-start;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.figma-black-cursor {
+  width: 18px;
+  height: 18px;
+  transform: translate(2px, -6px);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+
+.figma-user-badge {
+  background-color: #0D99FF;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(13, 153, 255, 0.35);
+  letter-spacing: -0.01em;
+}
+
+/* Right-side floating navigation buttons */
+.figma-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background-color: rgba(142, 142, 147, 0.75);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.figma-nav-btn:hover {
+  background-color: rgba(99, 99, 102, 0.95);
+  transform: translateY(-1px);
+}
+
+/* Floating Bottom Toolbar Dock */
+.figma-bottom-dock {
+  background-color: #1E1E1E;
+  color: #D4D4D8;
+  border-radius: 14px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.figma-dock-tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: #D4D4D8;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.figma-dock-tool:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.figma-dock-tool.is-active {
+  background-color: #0D99FF;
+  color: #FFFFFF;
+}
+
+/* Foto 4 Cutout Person with Line Stroke Outline & Drop Shadow */
+.foto4-editorial-cutout {
+  opacity: 0.5;
+  filter: 
+    drop-shadow(1px 0 0 #0D99FF)
+    drop-shadow(-1px 0 0 #0D99FF)
+    drop-shadow(0 1px 0 #0D99FF)
+    drop-shadow(0 -1px 0 #0D99FF)
+    drop-shadow(0 16px 28px rgba(0, 0, 0, 0.35));
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+}
+
+.foto4-editorial-cutout:hover {
+  opacity: 0.7;
+  filter: 
+    drop-shadow(1.5px 0 0 #0D99FF)
+    drop-shadow(-1.5px 0 0 #0D99FF)
+    drop-shadow(0 1.5px 0 #0D99FF)
+    drop-shadow(0 -1.5px 0 #0D99FF)
+    drop-shadow(0 20px 35px rgba(13, 153, 255, 0.4));
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECTION 2: PROFIL MAHASISWA FIGMA CANVAS STYLES
+   ========================================================================== */
+
+/* Straight Figma Selection Box for Section 2 Name (Fadilatul Fajri) */
+.figma-name-box {
+  position: relative;
+  border: 1.5px solid #0D99FF;
+  display: inline-block;
+  padding: 4px 14px;
+  background-color: transparent;
+  user-select: none;
+}
+
+/* Photo Selection Frame with Corner Bracket Handles */
+.figma-photo-container {
+  position: relative;
+  display: inline-block;
+  border: 1.5px solid #0D99FF;
+  border-radius: 2px;
+}
+
+.figma-photo-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #0D99FF;
+  z-index: 10;
+}
+
+.figma-photo-corner.corner-tl { top: -4.5px; left: -4.5px; }
+.figma-photo-corner.corner-tr { top: -4.5px; right: -4.5px; }
+.figma-photo-corner.corner-bl { bottom: -4.5px; left: -4.5px; }
+.figma-photo-corner.corner-br { bottom: -4.5px; right: -4.5px; }
+.figma-photo-corner.corner-tc { top: -4.5px; left: 50%; transform: translateX(-50%); }
+.figma-photo-corner.corner-bc { bottom: -4.5px; left: 50%; transform: translateX(-50%); }
+.figma-photo-corner.corner-ml { top: 50%; left: -4.5px; transform: translateY(-50%); }
+.figma-photo-corner.corner-mr { top: 50%; right: -4.5px; transform: translateY(-50%); }
+
+/* Export Dropdown Menu on Photo Bottom-Left */
+.figma-export-menu {
+  position: absolute;
+  bottom: -22px;
+  left: 20px;
+  background-color: #1E1E1E;
+  border-radius: 14px;
+  padding: 6px;
+  width: 135px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  z-index: 25;
+  user-select: none;
+}
+
+.figma-export-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #D4D4D8;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.figma-export-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.figma-export-item.is-selected {
+  position: relative;
+  background-color: #0D99FF;
+  color: #FFFFFF;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Dynamic State for Export Menu Items (Checkmark & Hand Cursor) */
+.figma-export-item .export-check-wrap {
+  display: none;
+}
+
+.figma-export-item .export-hand-cursor {
+  display: none;
+}
+
+.figma-export-item.is-selected .export-check-wrap {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.figma-export-item.is-selected .export-hand-cursor {
+  display: block !important;
+}
+
+/* 3D Flip Card Container & Faces for Section 2 Photo */
+.figma-photo-3d-wrap {
+  perspective: 1200px;
+}
+
+.figma-photo-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.34, 1.35, 0.64, 1);
+  will-change: transform;
+}
+
+.figma-photo-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.figma-flip-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.figma-flip-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.figma-flip-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+
+/* Light Blue Text Selection Tag (Education, Tools, Contact) */
+.figma-text-selection-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(13, 153, 255, 0.14);
+  border: 1px solid #0D99FF;
+  padding: 1px 8px;
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1E1E1E;
+  line-height: 1.25;
+}
+
+.figma-text-selection-tag .tag-dot-tl {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 5px;
+  height: 5px;
+  background-color: #0D99FF;
+  border-radius: 9999px;
+}
+
+.figma-text-selection-tag .tag-dot-br {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 5px;
+  height: 5px;
+  background-color: #0D99FF;
+  border-radius: 9999px;
+}
+
+/* Tool icon square styling */
+.figma-app-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.figma-app-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   SECTION 3: ARTEFAK (TABLE OF CONTENT / FIGMA ROPE CANVAS) STYLES
+   ========================================================================== */
+
+/* Selection Box for Heading ARTEFAK */
+.figma-toc-box {
+  position: relative;
+  border: 1.5px solid #0D99FF;
+  display: inline-block;
+  padding: 8px 24px 14px 24px;
+  background-color: transparent;
+  user-select: none;
+}
+
+/* Rope Canvas Interactive Stage */
+.figma-rope-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+@media (min-width: 768px) {
+  .figma-rope-stage {
+    height: 520px;
+  }
+}
+
+/* SVG Rope Overlay */
+.figma-rope-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Draggable Pill Capsules on the Rope */
+.figma-pill-capsule {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1.5px solid #1E1E1E;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #1E1E1E;
+  padding: 0.625rem 1.625rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: grab;
+  user-select: none;
+  white-space: nowrap;
+  touch-action: none;
+  z-index: 10;
+  transform-origin: center center;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  will-change: transform, left, top;
+}
+
+@media (min-width: 640px) {
+  .figma-pill-capsule {
+    font-size: 1.0625rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+.figma-pill-capsule:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.figma-pill-capsule.is-dragging {
+  cursor: grabbing !important;
+  z-index: 50 !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22) !important;
+  transform: scale(1.06) !important;
+}
+
+/* Floor (Lantai) & Fixed Floor Pills */
+.figma-floor-line {
+  width: 100%;
+  height: 2px;
+  background-color: #1E1E1E;
+  position: relative;
+}
+
+.figma-floor-pill {
+  border-radius: 9999px;
+  border: 1.5px solid #1E1E1E;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9375rem;
+  color: #1E1E1E;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .figma-floor-pill {
+    font-size: 1.0625rem;
+    padding: 0.875rem 2.5rem;
+  }
+}
+
+.figma-floor-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* ==========================================================================
+   SECTION 05: DOKUMENTASI KEGIATAN - EXPANDING ACCORDION GALLERY
+   ========================================================================== */
+.gallery-accordion {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  height: 520px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .gallery-accordion {
+    height: 480px;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-accordion {
+    height: 440px;
+    gap: 0.625rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+  
+  .gallery-accordion::-webkit-scrollbar {
+    height: 6px;
+  }
+  .gallery-accordion::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 9999px;
+  }
+  .gallery-accordion::-webkit-scrollbar-thumb {
+    background: #E65F2B;
+    border-radius: 9999px;
+  }
+}
+
+.gallery-card {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  border-radius: 1.5rem; /* 24px */
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #1E1E1E;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: flex 0.65s cubic-bezier(0.25, 1, 0.35, 1), transform 0.4s ease;
+  will-change: flex;
+}
+
+@media (max-width: 768px) {
+  .gallery-card {
+    min-width: 76px;
+    scroll-snap-align: center;
+    border-radius: 1.25rem;
+  }
+}
+
+/* Active / Expanded state: wide expansion */
+.gallery-card.is-active {
+  flex: 3.8 1 0%;
+}
+
+@media (max-width: 768px) {
+  .gallery-card.is-active {
+    min-width: 290px;
+  }
+}
+
+/* Photo */
+.gallery-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.35, 1);
+  pointer-events: none;
+}
+
+.gallery-card:hover .gallery-card-img,
+.gallery-card.is-active .gallery-card-img {
+  transform: scale(1.05);
+}
+
+/* Overlay gradient */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 15, 0.92) 0%,
+    rgba(15, 15, 15, 0.6) 30%,
+    rgba(15, 15, 15, 0.15) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0.35;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-card.is-active .gallery-card-overlay {
+  opacity: 1;
+}
+
+/* Card Content / Captions */
+.gallery-card-content {
+  position: absolute;
+  inset-x: 0;
+  bottom: 0;
+  padding: 1.75rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.35, 1), transform 0.45s cubic-bezier(0.25, 1, 0.35, 1);
+  white-space: normal;
+}
+
+@media (max-width: 640px) {
+  .gallery-card-content {
+    padding: 1.25rem;
+  }
+}
+
+.gallery-card.is-active .gallery-card-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.12s;
+}
+
+/* Number pill on collapsed / active card */
+.gallery-card-badge {
+  position: absolute;
+  top: 1.125rem;
+  left: 1.125rem;
+  z-index: 15;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.gallery-card.is-active .gallery-card-badge {
+  background: #E65F2B;
+  border-color: #E65F2B;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(230, 95, 43, 0.35);
+}
+
+/* Pure CSS Hover Enhancement */
+@media (min-width: 769px) {
+  .gallery-accordion:hover .gallery-card.is-active:not(:hover) {
+    flex: 1 1 0%;
+  }
+  .gallery-accordion:hover .gallery-card.is-active:not(:hover) .gallery-card-content {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+  .gallery-accordion:hover .gallery-card.is-active:not(:hover) .gallery-card-badge {
+    background: rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+  }
+  .gallery-accordion:hover .gallery-card:hover {
+    flex: 3.8 1 0% !important;
+  }
+  .gallery-accordion:hover .gallery-card:hover .gallery-card-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    transition-delay: 0.12s;
+  }
+  .gallery-accordion:hover .gallery-card:hover .gallery-card-badge {
+    background: #E65F2B;
+    border-color: #E65F2B;
+    box-shadow: 0 2px 8px rgba(230, 95, 43, 0.35);
+  }
+  .gallery-accordion:hover .gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
+  }
+}
+
+
+
+

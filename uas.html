@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAS: Artefak & Analisis Siklus 2, 3, & 4 | Fadilatul Fajri, S.Pd. - PPL Mandiri 1</title>
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="shortcut icon" href="logo/logo.png">
+
+  <!-- Custom Editorial & Figma CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            figmaBlue: '#0D99FF',
+            figmaDark: '#1E1E1E',
+            figmaBorder: '#D8D1C5',
+          },
+          fontFamily: {
+            heading: ['"Syne"', '"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFA;
+      color: #1E1E1E;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Embedded Box Styling */
+    .preview-embed-box {
+      background-color: #FFFFFF;
+      border: 1px solid #D8D1C5;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Cycle Tab Button Styling */
+    .cycle-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      border: 1px solid #D8D1C5;
+      background-color: #F4F4F5;
+      color: #71717A;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cycle-btn:hover {
+      background-color: #E4E4E7;
+      color: #1E1E1E;
+    }
+
+    .cycle-btn.is-active {
+      background-color: #0D99FF;
+      border-color: #0D99FF;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(13, 153, 255, 0.25);
+    }
+
+    /* Quick Jump Filter Pill */
+    .filter-pill {
+      border: 1px solid #D8D1C5;
+      background-color: #FFFFFF;
+      color: #1E1E1E;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-pill:hover {
+      background-color: #0D99FF;
+      color: #FFFFFF;
+      border-color: #0D99FF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(13, 153, 255, 0.2);
+    }
+  </style>
+</head>
+<body id="top" class="figma-canvas-bg text-[#1E1E1E] selection:bg-[#0D99FF] selection:text-white">
+
+  <!-- ========================================================================
+       TOP MICRO-BAR
+       ======================================================================== -->
+  <div class="border-b border-[#D8D1C5] bg-white/80 backdrop-blur-sm py-2 px-4 sm:px-8 text-[11px] font-mono text-[#71717A] flex flex-wrap items-center justify-between gap-2">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#0D99FF]"></span>
+      <span class="font-bold text-[#1E1E1E] uppercase">UAS • ARTEFAK & ANALISIS MULTI-SIKLUS</span>
+      <span class="text-[#D8D1C5]">•</span>
+      <span>PPG CALON GURU GELOMBANG 1 TAHUN 2026</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span>PPKn UMP</span>
+      <span class="text-[#D8D1C5]">•</span>
+      <span>SMPN 5 PURWOKERTO</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       1. MAIN NAVBAR (KOTAK TUMPUL -> OVAL MENGGANTUNG)
+       ======================================================================== -->
+  <header id="main-nav-wrapper" class="main-nav-wrapper">
+    <div class="main-nav-container">
+      
+      <!-- Brand Wordmark: Fad1latul Fajrı vision -->
+      <a href="index.html#hero" class="brand-wordmark-link">
+        <span>Fad<span class="text-[#DC2626] font-extrabold mx-[0.5px]">1</span>latul</span>
+        <span>Fajr<span class="relative inline-block">ı<svg class="sun-dot-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></g></svg></span></span>
+        <span class="relative inline-block ml-1">
+          <span class="text-[#0D99FF] font-extrabold text-xs sm:text-sm tracking-wider lowercase">vision</span>
+          <svg class="glasses-icon-wrap" viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="8" cy="8" r="5.5" class="fill-blue-50/80 stroke-current"/>
+            <circle cx="24" cy="8" r="5.5" class="fill-blue-50/80 stroke-current"/>
+            <path d="M13.5 7.5 Q16 6 18.5 7.5"/>
+            <path d="M2.5 7.5 L0.5 6.5"/>
+            <path d="M29.5 7.5 L31.5 6.5"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Track -->
+      <nav id="desktop-nav" class="hidden lg:flex items-center">
+        <div id="nav-links-track" class="nav-links-track">
+          <div id="nav-liquid-blob" class="nav-liquid-blob"></div>
+
+          <a href="index.html#hero" class="nav-link-item">Beranda</a>
+          <a href="index.html#profil" class="nav-link-item">Profil Mahasiswa</a>
+          <a href="lk3-uts.html" class="nav-link-item">LK3 & dan UTS</a>
+          <a href="uas.html" class="nav-link-item is-active">UAS</a>
+          <a href="index.html#refleksi" class="nav-link-item">Refleksi</a>
+          <a href="index.html#galeri" class="nav-link-item">Dokumentasi</a>
+          <a href="index.html#institusi" class="nav-link-item">Instansi</a>
+          <a href="index.html#kontak" class="nav-link-item">Kontak</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        id="mobile-menu-trigger" 
+        aria-label="Buka Navigasi" 
+        class="lg:hidden p-2 text-[#1E1E1E] border border-[#D8D1C5] hover:border-[#0D99FF] rounded-lg bg-white/80 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden mt-2 max-w-sm mx-auto bg-white/95 backdrop-blur-md border border-[#D8D1C5] rounded-2xl p-4 shadow-xl space-y-1 text-xs font-heading font-semibold uppercase pointer-events-auto">
+      <a href="index.html#hero" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Beranda</a>
+      <a href="index.html#profil" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Profil Mahasiswa</a>
+      <a href="lk3-uts.html" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">LK3 & dan UTS</a>
+      <a href="uas.html" class="block py-2.5 px-3 rounded-lg text-[#0D99FF] bg-blue-50 font-bold">UAS</a>
+      <a href="index.html#refleksi" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Refleksi</a>
+      <a href="index.html#galeri" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Dokumentasi</a>
+      <a href="index.html#institusi" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Instansi</a>
+      <a href="index.html#kontak" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Kontak</a>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       PAGE HERO / BANNER HEADER (SECTION 1: UAS MULTI-SIKLUS)
+       ======================================================================== -->
+  <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    
+    <!-- Hero Selection Frame Header dengan Foto Background Transparan Wide -->
+    <div class="relative bg-white border border-[#0D99FF] rounded-2xl p-8 sm:p-12 shadow-sm overflow-hidden">
+      
+      <!-- FOTO BACKGROUND 25% TRANSPARENCY WIDE -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="images/foto%206.jfif" 
+          alt="Background Dokumentasi Multi-Siklus SMPN 5 Purwokerto" 
+          class="w-full h-full object-cover object-center opacity-25 filter saturate-[0.85]"
+        />
+        <div class="absolute inset-0 bg-white/40 backdrop-blur-[0.5px]"></div>
+      </div>
+
+      <!-- 4 Corner Handles -->
+      <div class="figma-handle handle-tl z-20"></div>
+      <div class="figma-handle handle-tr z-20"></div>
+      <div class="figma-handle handle-bl z-20"></div>
+      <div class="figma-handle handle-br z-20"></div>
+
+      <!-- Top Frame Label -->
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm z-20">
+        <span>Frame</span>
+        <span>UAS • Kompilasi Multi-Siklus (Siklus 2, 3, & 4)</span>
+      </div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pt-2">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 text-[#0D99FF] border border-[#0D99FF]/40 font-mono text-xs font-bold rounded-sm mb-4 shadow-sm backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-[#0D99FF]"></span>
+            UJIAN AKHIR SEMESTER (UAS) PPL MANDIRI 1
+          </div>
+          <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-[#1E1E1E] uppercase tracking-tight leading-tight">
+            Artefak & Analisis Multi-Siklus
+          </h1>
+          <p class="font-body text-sm sm:text-base text-[#2E2E2E] mt-3 leading-relaxed font-medium">
+            Dokumentasi komprehensif seluruh perangkat modul ajar, media pembelajaran, bahan ajar, LKM, bukti hasil karya murid, video mengajar, dan lembar penilaian guru pamong yang mencakup <strong>Siklus 2, Siklus 3, dan Siklus 4</strong> di Kelas VIII D SMP Negeri 5 Purwokerto.
+          </p>
+        </div>
+
+        <!-- Meta Details -->
+        <div class="flex flex-wrap lg:flex-col items-start lg:items-end gap-2 text-xs font-mono">
+          <span class="px-3 py-1.5 bg-white/95 border border-[#D8D1C5] rounded-sm text-[#1E1E1E] font-bold shadow-sm backdrop-blur-sm">
+            Fase D • Kelas VIII D
+          </span>
+          <span class="px-3 py-1.5 bg-white/95 border border-[#0D99FF]/40 rounded-sm text-[#0D99FF] font-bold shadow-sm backdrop-blur-sm">
+            Cakupan: Siklus 2, 3 & 4
+          </span>
+          <span class="px-3 py-1.5 bg-white/95 border border-[#1E1E1E]/30 rounded-sm text-[#1E1E1E] font-bold shadow-sm backdrop-blur-sm">
+            SMP Negeri 5 Purwokerto
+          </span>
+        </div>
+      </div>
+
+      <!-- Master Global Cycle Switcher -->
+      <div class="relative z-10 border-t border-[#D8D1C5]/80 pt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold text-[#1E1E1E] uppercase tracking-wider">Pilih Tampilan Siklus Cepat:</span>
+          <button onclick="setGlobalCycle(2)" id="global-btn-2" class="cycle-btn is-active">Siklus 2</button>
+          <button onclick="setGlobalCycle(3)" id="global-btn-3" class="cycle-btn">Siklus 3</button>
+          <button onclick="setGlobalCycle(4)" id="global-btn-4" class="cycle-btn">Siklus 4</button>
+        </div>
+        <div class="text-[11px] font-mono text-[#71717A]">
+          Ganti tab siklus di setiap artefak secara mandiri atau gunakan filter cepat di atas.
+        </div>
+      </div>
+
+      <!-- Quick Jump Toolbar (7 Filter Pills) -->
+      <div class="relative z-10 border-t border-[#D8D1C5]/50 pt-5 mt-4">
+        <div class="flex flex-wrap gap-2.5">
+          <a href="#modul-ajar" class="filter-pill"><span>01</span><span>Modul Ajar (3 Siklus)</span></a>
+          <a href="#media-ajar" class="filter-pill"><span>02</span><span>Media Ajar (3 Siklus)</span></a>
+          <a href="#bahan-ajar" class="filter-pill"><span>03</span><span>Bahan Ajar (3 Siklus)</span></a>
+          <a href="#lkm" class="filter-pill"><span>04</span><span>LKM (3 Siklus)</span></a>
+          <a href="#hasil-kerja" class="filter-pill"><span>05</span><span>Hasil Kerja Murid</span></a>
+          <a href="#video" class="filter-pill"><span>06</span><span>Video Pembelajaran</span></a>
+          <a href="#penilaian-gp" class="filter-pill"><span>07</span><span>Penilaian GP</span></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================
+         ARTEFAK 01: MODUL AJAR (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="modul-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>01</span>
+        <span>Frame: Modul Ajar Multi-Siklus</span>
+      </div>
+
+      <!-- Header Artefak & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Perencanaan Pembelajaran • 3 Siklus Terstruktur
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Modul Ajar Kurikulum Merdeka (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        
+        <!-- Tab Selector Siklus -->
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('modul', 2)" id="tab-modul-2" class="cycle-btn is-active">Siklus 2 (P6)</button>
+          <button onclick="switchTab('modul', 3)" id="tab-modul-3" class="cycle-btn">Siklus 3 (P10)</button>
+          <button onclick="switchTab('modul', 4)" id="tab-modul-4" class="cycle-btn">Siklus 4 (P11)</button>
+        </div>
+      </div>
+
+      <!-- PANEL SIKLUS 2 (P6) -->
+      <div id="panel-modul-2" class="cycle-panel-modul">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">FADILATUL FAJRI_MODUL AJAR P6 PPLM SIKLUS 2.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/FADILATUL%20FAJRI_MODUL%20AJAR%20P6%20PPLM%20SIKLUS%202.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/FADILATUL%20FAJRI_MODUL%20AJAR%20P6%20PPLM%20SIKLUS%202.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Modul Ajar Siklus 2 Pertemuan 6"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Pedagogi Siklus 2 • P6</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Modul Ajar Pertemuan 6 (Siklus 2)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Disusun untuk Pertemuan 6 (pembuka Bab 2 "Pedoman Negaraku") di Kelas VIII D dengan materi <em>Pengertian dan Bentuk Konstitusi</em>.</li>
+                <li>• <strong>Tujuan:</strong> Membimbing murid memahami pengertian norma aturan, hakikat konstitusi tertulis dan tidak tertulis (C2), serta merumuskan draf kesepakatan tata tertib kelas secara kolaboratif (P2).</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menggabungkan model <em>Cooperative Learning</em> (Group Investigation / Jigsaw) dengan teknik presentasi mini-galeri <em>Window Shopping</em> dan portal web EdukaCivic sehingga interaksi siswa sangat aktif.</li>
+                <li>• <strong>Kekurangan:</strong> Perputaran antarpos belanja gagasan membutuhkan alokasi waktu yang ketat agar setiap kelompok mendapatkan telaah yang proporsional.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Belajar Konstruktivisme Sosial (Lev Vygotsky) melalui investigasi teman sebaya.</li>
+                <li>• Pendekatan <em>Deep Learning</em> & Pembelajaran Berdiferensiasi (Carol Ann Tomlinson).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL SIKLUS 3 (P10) -->
+      <div id="panel-modul-3" class="cycle-panel-modul hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri_MODUL AJAR P10 PPLM SIKLUS 3.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri_MODUL%20AJAR%20P10%20PPLM%20SIKLUS%203.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri_MODUL%20AJAR%20P10%20PPLM%20SIKLUS%203.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Modul Ajar Siklus 3 Pertemuan 10"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Pedagogi Siklus 3 • P10</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Modul Ajar Pertemuan 10 (Siklus 3)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Disusun untuk Pertemuan 10 dengan sub-materi <em>Sejarah Perumusan dan Pengesahan UUD NRI 1945 / Review Komprehensif</em>.</li>
+                <li>• <strong>Tujuan:</strong> Menganalisis fungsi UUD NRI 1945 sebagai alat kontrol hukum dan hierarki tata urutan perundang-undangan (C4) melalui turnamen akademik interaktif.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Mengadopsi model <em>Teams Games Tournament (TGT)</em> berformat game show ("Pedoman Negaraku Game Show") yang memadukan kartu tebak gaya aksi, amplop tantangan, dan Smart TV.</li>
+                <li>• <strong>Kekurangan:</strong> Dinamika persaingan tim yang sangat antusias memerlukan ketegasan guru dalam menjaga kondusivitas suara kelas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Pembelajaran Kooperatif TGT (Robert Slavin).</li>
+                <li>• Teori Motivasi Intrinsik & Gamifikasi Pembelajaran (Deci & Ryan).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL SIKLUS 4 (P11) -->
+      <div id="panel-modul-4" class="cycle-panel-modul hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">FADILATUL FAJRI_MODUL AJAR P11 PPLM SIKLUS 4.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/FADILATUL%20FAJRI_MODUL%20AJAR%20P11%20PPLM%20SIKLUS%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/FADILATUL%20FAJRI_MODUL%20AJAR%20P11%20PPLM%20SIKLUS%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Modul Ajar Siklus 4 Pertemuan 11"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Pedagogi Siklus 4 • P11</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Modul Ajar Pertemuan 11 (Siklus 4)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Disusun untuk Pertemuan 11 sebagai siklus konsolidasi akhir materi Bab 2 dan evaluasi sumatif komprehensif di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Menuntun peserta didik membandingkan struktur sistematika UUD NRI Tahun 1945 sebelum dan sesudah amandemen secara kritis dan komprehensif (C4).</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Mengintegrasikan <em>Game-Based Learning</em> dengan platform kuis Blastroom dan tebak gambar digital Gartic.io yang memberikan analitik pemahaman konsep murid secara instan.</li>
+                <li>• <strong>Kekurangan:</strong> Pelaksanaan teknis sangat bertumpu pada stabilitas koneksi internet dan kesiapan baterai gawai para peserta didik.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori <em>Game-Based Learning</em> (James Paul Gee & Marc Prensky).</li>
+                <li>• Kerangka TPACK Integratif (Mishra & Koehler) & Asesmen Autentik (Grant Wiggins).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 02: MEDIA AJAR (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="media-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>02</span>
+        <span>Frame: Media Ajar Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Media Pembelajaran Digital • TPACK Framework
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Media Ajar Interaktif (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('media', 2)" id="tab-media-2" class="cycle-btn is-active">Siklus 2 (P6)</button>
+          <button onclick="switchTab('media', 3)" id="tab-media-3" class="cycle-btn">Siklus 3 (P10)</button>
+          <button onclick="switchTab('media', 4)" id="tab-media-4" class="cycle-btn">Siklus 4 (P11)</button>
+        </div>
+      </div>
+
+      <!-- Media Panel Siklus 2 (P6: Pertemuan 1 BAB 2) -->
+      <div id="panel-media-2" class="cycle-panel-media">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Canva • Pertemuan 1 BAB 2 (Pertemuan 6)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://www.canva.com/design/DAHVziMn00E/mlv67bbA9OHMwcZjBmkkpQ/view?utm_content=DAHVziMn00E&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Buka Canva ↗</a>
+                </div>
+              </div>
+              <div class="p-4 bg-zinc-50">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0.2em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                    src="https://www.canva.com/design/DAHVziMn00E/mlv67bbA9OHMwcZjBmkkpQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                  </iframe>
+                </div>
+                <div class="text-xs font-mono text-[#71717A] flex items-center justify-between pt-1 border-t border-[#E5E5E5]">
+                  <span><a href="https://www.canva.com/design/DAHVziMn00E/mlv67bbA9OHMwcZjBmkkpQ/view?utm_content=DAHVziMn00E&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Pertemuan 1 BAB 2</a> oleh Peserta PPG 48221</span>
+                  <span class="text-[#0D99FF] font-bold">Slide Interaktif S2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Media Siklus 2 • P6</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Media Canva Siklus 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Media tayang interaktif Canva untuk mengantarkan materi Bab 2 Pertemuan 1 (Pertemuan 6) tentang <em>Pengertian dan Bentuk Konstitusi</em> di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Memvisualisasikan konsep tata tertib, perbedaan konstitusi tertulis dan tidak tertulis, serta kedudukan UUD NRI 1945 secara konkret dan ramah anak.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Palet warna harmonis, ilustrasi infografis kontekstual kehidupan sekolah, serta memuat pemantik diskusi kelompok yang terstruktur.</li>
+                <li>• <strong>Kekurangan:</strong> Memerlukan penyesuaian kontras proyektor kelas agar teks pada diagram alur terbaca jelas hingga meja belakang.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Kerangka TPACK (Mishra & Koehler) integrasi teknologi dan materi pedagogik.</li>
+                <li>• Teori Beban Kognitif Visual (<em>Cognitive Load Theory</em> - John Sweller).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media Panel Siklus 3 (P10: Pertemuan 10 BAB 2) -->
+      <div id="panel-media-3" class="cycle-panel-media hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Canva • Pertemuan 10 BAB 2 (Game Show)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://www.canva.com/design/DAHWcMzUArE/-vwH2eAAHRKBtibiWb-mwA/view?utm_content=DAHWcMzUArE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Buka Canva ↗</a>
+                </div>
+              </div>
+              <div class="p-4 bg-zinc-50">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0.2em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                    src="https://www.canva.com/design/DAHWcMzUArE/-vwH2eAAHRKBtibiWb-mwA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                  </iframe>
+                </div>
+                <div class="text-xs font-mono text-[#71717A] flex items-center justify-between pt-1 border-t border-[#E5E5E5]">
+                  <span><a href="https://www.canva.com/design/DAHWcMzUArE/-vwH2eAAHRKBtibiWb-mwA/view?utm_content=DAHWcMzUArE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Pertemuan 10 BAB 2</a> oleh Peserta PPG 48221</span>
+                  <span class="text-[#0D99FF] font-bold">Game Show S3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Media Siklus 3 • P10</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Media Game Show Siklus 3</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Media tayang Canva dinamis untuk mendukung model <em>Teams Games Tournament (TGT)</em> "Pedoman Negaraku Game Show" di Pertemuan 10 Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Menampilkan petunjuk babak tantangan kuis kinetik, aturan tebak aksi, serta pemantik studi kasus UUD NRI 1945 secara kompetitif dan menyenangkan.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Animasi slide atraktif menumbuhkan adrenalin positif murid, memicu respons cepat, dan mengonsolidasikan kerja sama antartim heterogen.</li>
+                <li>• <strong>Kekurangan:</strong> Ritme perpindahan slide harus dikendalikan secara seksama oleh guru agar sesi diskusi tim tidak terburu-buru.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <em>Gamification in Education</em> (Sebastian Deterding et al.).</li>
+                <li>• Teori Desain Pesan Instruksional (Fleming & Levie).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media Panel Siklus 4 (P11: Pertemuan 11 BAB 2) -->
+      <div id="panel-media-4" class="cycle-panel-media hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Canva • Pertemuan 11 BAB 2 (Review Sistematika)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://www.canva.com/design/DAHXSjbm8tU/TEF_jnSReU_ubbE0X8ByLw/view?utm_content=DAHXSjbm8tU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Buka Canva ↗</a>
+                </div>
+              </div>
+              <div class="p-4 bg-zinc-50">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0.2em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                    src="https://www.canva.com/design/DAHXSjbm8tU/TEF_jnSReU_ubbE0X8ByLw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                  </iframe>
+                </div>
+                <div class="text-xs font-mono text-[#71717A] flex items-center justify-between pt-1 border-t border-[#E5E5E5]">
+                  <span><a href="https://www.canva.com/design/DAHXSjbm8tU/TEF_jnSReU_ubbE0X8ByLw/view?utm_content=DAHXSjbm8tU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Pertemuan 11 BAB 2</a> oleh Peserta PPG 48221</span>
+                  <span class="text-[#0D99FF] font-bold">Review Digital S4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Media Siklus 4 • P11</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Media Review Siklus 4</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Media presentasi rangkuman komparatif yang mengintegrasikan alur permainan kuis daring Blastroom dan tebak gambar visual Gartic.io di Pertemuan 11.</li>
+                <li>• <strong>Tujuan:</strong> Memandu murid membandingkan perubahan sistematika batang tubuh UUD NRI 1945 sebelum dan sesudah amandemen secara sistematis.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menyederhanakan matriks pasal amandemen yang kompleks ke dalam tabel visual interaktif yang mempermudah asosiasi kognitif siswa.</li>
+                <li>• <strong>Kekurangan:</strong> Menuntut panduan instruksi yang jelas saat berpindah dari slide proyektor ke platform kuis pada perangkat seluler murid.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <em>Dual Coding Theory</em> (Allan Paivio) perpaduan representasi verbal dan visual.</li>
+                <li>• Pembelajaran Berbasis Permainan (<em>Game-Based Learning</em> - James Paul Gee).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 03: BAHAN AJAR (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="bahan-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>03</span>
+        <span>Frame: Bahan Ajar Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Bahan Bacaan Siswa Terpadu • Berkelanjutan di 3 Siklus
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Bahan Ajar Siswa (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('bahan', 2)" id="tab-bahan-2" class="cycle-btn is-active">Siklus 2</button>
+          <button onclick="switchTab('bahan', 3)" id="tab-bahan-3" class="cycle-btn">Siklus 3</button>
+          <button onclick="switchTab('bahan', 4)" id="tab-bahan-4" class="cycle-btn">Siklus 4</button>
+        </div>
+      </div>
+
+      <!-- Bahan Panel Siklus 2 -->
+      <div id="panel-bahan-2" class="cycle-panel-bahan">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri_BAHAN AJAR P6 PPLM SIKLUS 2 3 4.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Bahan Ajar Terpadu Siklus 2, 3, & 4"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bahan Ajar • Siklus 2</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Bahan Bacaan Terpadu Bab 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Bahan ajar pegangan pokok Bab 2 "Pedoman Negaraku" yang mencakup konsep norma aturan, konstitusi tertulis (UUD NRI 1945), dan konvensi (Pidato Kenegaraan 16 Agustus).</li>
+                <li>• <strong>Tujuan:</strong> Menjadi rujukan literasi utama siswa dalam memahami arti penting peraturan serta mendukung pengerjaan penugasan kelompok Siklus 2.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Bahasa komunikatif, ringkas 3 halaman terstruktur, memuat petunjuk belajar mandiri, dan menghubungkan teori dengan kehidupan berbangsa.</li>
+                <li>• <strong>Kekurangan:</strong> Perlu pendampingan digital melalui portal web EdukaCivic untuk studi kasus kontekstual yang lebih luas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Pembelajaran Bermakna (<em>Meaningful Learning</em> - David Ausubel).</li>
+                <li>• Prinsip Keterbacaan Bahan Instruksional (Chall & Dale) dan Kurikulum Spiral (Jerome Bruner).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bahan Panel Siklus 3 -->
+      <div id="panel-bahan-3" class="cycle-panel-bahan hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri_BAHAN AJAR P6 PPLM SIKLUS 2 3 4.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Bahan Ajar Terpadu Siklus 2, 3, & 4"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bahan Ajar • Siklus 3</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Bahan Bacaan Terpadu Bab 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Bahan ajar rujukan resmi yang digunakan murid selama persiapan babak turnamen akademik TGT (Teams Games Tournament) pada Siklus 3.</li>
+                <li>• <strong>Tujuan:</strong> Memperkuat penguasaan dasar materi sejarah perumusan dan fungsi konstitusi sebelum berkompetisi dalam tantangan kuis.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Poin-poin materi disajikan secara tematik dan ringkas, memudahkan murid meninjau ulang konsep kunci secara cepat.</li>
+                <li>• <strong>Kekurangan:</strong> Memerlukan penambahan suplemen fakta sejarah interaktif yang diakses melalui tautan EdukaCivic.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Belajar Bermakna (<em>Meaningful Learning</em> - David Ausubel).</li>
+                <li>• Pembelajaran Konseptual Berkelanjutan (<em>Spiral Curriculum</em> - Jerome Bruner).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bahan Panel Siklus 4 -->
+      <div id="panel-bahan-4" class="cycle-panel-bahan hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri_BAHAN AJAR P6 PPLM SIKLUS 2 3 4.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri_BAHAN%20AJAR%20P6%20PPLM%20SIKLUS%202%203%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Bahan Ajar Terpadu Siklus 2, 3, & 4"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bahan Ajar • Siklus 4</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Bahan Bacaan Terpadu Bab 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Bahan rujukan konsolidasi akhir untuk merefleksikan seluruh materi pokok norma, aturan, dan konstitusi pada evaluasi penutup Siklus 4.</li>
+                <li>• <strong>Tujuan:</strong> Mengukuhkan retensi memori jangka panjang murid dan mempersiapkan mereka menyelesaikan asesmen formatif-sumatif di platform Blastroom.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menjaga konsistensi pemahaman konsep kunci siswa dari pertemuan awal hingga akhir tanpa beban kognitif berlebih.</li>
+                <li>• <strong>Kekurangan:</strong> Siswa yang memiliki kecepatan belajar tinggi perlu diarahkan ke bank soal pengayaan di portal EdukaCivic.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Pemrosesan Informasi (Richard Atkinson & Richard Shiffrin).</li>
+                <li>• Asesmen Kognitif Sumatif (Grant Wiggins).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 04: LKM (LEMBAR KERJA MURID) (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="lkm" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>04</span>
+        <span>Frame: LKM Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Instrumen Kerja Murid • Aktivitas Terbimbing
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Lembar Kerja Murid (LKM) (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('lkm', 2)" id="tab-lkm-2" class="cycle-btn is-active">Siklus 2 (P6)</button>
+          <button onclick="switchTab('lkm', 3)" id="tab-lkm-3" class="cycle-btn">Siklus 3 (P10)</button>
+          <button onclick="switchTab('lkm', 4)" id="tab-lkm-4" class="cycle-btn">Siklus 4 (P11)</button>
+        </div>
+      </div>
+
+      <!-- LKM Panel Siklus 2 (P6) -->
+      <div id="panel-lkm-2" class="cycle-panel-lkm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri LKM P6 PPLM SIKLUS 2.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri%20LKM%20P6%20PPLM%20SIKLUS%202.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri%20LKM%20P6%20PPLM%20SIKLUS%202.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau LKM Siklus 2 Pertemuan 6"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian LKM Siklus 2 • P6</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">LKM Pertemuan 6 (Siklus 2)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Lembar aktivitas kerja kelompok Pertemuan 6 materi <em>Pengertian dan Bentuk Konstitusi</em> di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Membimbing murid menganalisis arti penting norma bagi ketertiban lingkungan (C4) dan merumuskan draf kesepakatan peraturan sekolah secara kolaboratif (P2).</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menghubungkan telaah materi langsung dengan perumusan aturan riil di kelas yang siap dipamerkan dalam format <em>Window Shopping</em>.</li>
+                <li>• <strong>Kekurangan:</strong> Lembar penuangan draf kesepakatan perlu membatasi jumlah poin agar kalimat poster tetap padat dan terbaca jelas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Pembelajaran Kooperatif (David & Roger Johnson).</li>
+                <li>• Asesmen Kinerja Autentik (Grant Wiggins).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LKM Panel Siklus 3 (P10) -->
+      <div id="panel-lkm-3" class="cycle-panel-lkm hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri LKM P10 PPLM SIKLUS 3.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri%20LKM%20P10%20PPLM%20SIKLUS%203.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri%20LKM%20P10%20PPLM%20SIKLUS%203.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau LKM Siklus 3 Pertemuan 10"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian LKM Siklus 3 • P10</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">LKM Pertemuan 10 (Siklus 3)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Lembar kerja turnamen akademik "Pedoman Negaraku Game Show" Pertemuan 10 materi <em>Review Komprehensif UUD NRI 1945</em>.</li>
+                <li>• <strong>Tujuan:</strong> Mengorganisasikan pembagian peran tim secara terstruktur (Perwakilan Babak 1 Tebak Gambar, Babak 2 Tebak Gaya Action Cards, dan Babak 3 Cepat Tepat Kasus) untuk menguji penguasaan hierarki hukum (C4).</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Matriks penugasan anggota tim sangat eksplisit sehingga mengeliminasi fenomena siswa pasif dan menggabungkan kemampuan visual-kinestetik.</li>
+                <li>• <strong>Kekurangan:</strong> Guru harus memastikan pencatatan skor di LKM kelompok berjalan sinkron dengan perolehan skor di Smart TV.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Model <em>Teams Games Tournament</em> (Robert Slavin).</li>
+                <li>• Teori Kecerdasan Majemuk (<em>Multiple Intelligences</em> - Howard Gardner).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LKM Panel Siklus 4 (P11) -->
+      <div id="panel-lkm-4" class="cycle-panel-lkm hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Fadilatul Fajri LKM P11 PPLM SIKLUS 4.pdf</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="UAS/Fadilatul%20Fajri%20LKM%20P11%20PPLM%20SIKLUS%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="UAS/Fadilatul%20Fajri%20LKM%20P11%20PPLM%20SIKLUS%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau LKM Siklus 4 Pertemuan 11"
+              ></iframe>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian LKM Siklus 4 • P11</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">LKM Pertemuan 11 (Siklus 4)</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Lembar kerja komprehensif Pertemuan 11 materi <em>Konstitusi dan UUD NRI Tahun 1945</em> di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Menguji kemampuan murid membandingkan perubahan struktur sistematika UUD 1945 sebelum dan sesudah amandemen (C4) serta merefleksikan hasil kuis digital Blastroom dan Gartic.io.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menyatukan asesmen kognitif berbasis tabel perbandingan dengan pertanyaan refleksi metakognitif yang memicu pemikiran kritis tingkat tinggi.</li>
+                <li>• <strong>Kekurangan:</strong> Menuntut alokasi waktu analisis tertulis yang memadai di sela-sela euforia permainan kuis digital.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Prinsip Asesmen sebagai Pembelajaran (<em>Assessment as Learning</em> - Black & Wiliam).</li>
+                <li>• Taksonomi Kognitif Tingkat Tinggi (HOTS - Anderson & Krathwohl).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 05: HASIL KERJA MURID (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="hasil-kerja" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>05</span>
+        <span>Frame: Hasil Kerja Murid Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Bukti Belajar Digital • Platform EdukaCivic Terpadu
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Hasil Kerja Murid — Web EdukaCivic (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('hasil', 2)" id="tab-hasil-2" class="cycle-btn is-active">Siklus 2</button>
+          <button onclick="switchTab('hasil', 3)" id="tab-hasil-3" class="cycle-btn">Siklus 3</button>
+          <button onclick="switchTab('hasil', 4)" id="tab-hasil-4" class="cycle-btn">Siklus 4</button>
+        </div>
+      </div>
+
+      <!-- HASIL KERJA PANEL SIKLUS 2 (EDUKACIVIC) -->
+      <div id="panel-hasil-2" class="cycle-panel-hasil">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Web EdukaCivic — edukacivic.vercel.app</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Kunjungi Web ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="https://edukacivic.vercel.app" 
+                class="w-full h-[520px] border-0"
+                title="Platform Web EdukaCivic Siklus 2"
+                loading="lazy"
+              ></iframe>
+              <div class="p-3 bg-blue-50/60 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="font-bold text-[#1E1E1E]">Live Production URL:</span>
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] hover:underline">https://edukacivic.vercel.app</a>
+                </div>
+                <span class="px-2.5 py-0.5 bg-white border border-[#D8D1C5] rounded font-semibold text-[#1E1E1E]">Hasil Belajar Digital Siklus 2</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bukti Belajar • Siklus 2</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Platform Digital EdukaCivic</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Platform edukasi berbasis web yang dirancang khusus sebagai pusat materi digital dan etalase karya siswa Kelas VIII D SMP Negeri 5 Purwokerto.</li>
+                <li>• <strong>Tujuan:</strong> Menyediakan lingkungan belajar digital yang memfasilitasi interaksi mandiri, literasi konstitusi digital, dan penyimpanan bukti unjuk kerja siswa.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Aksesibel 24/7 di peramban gawai tanpa install aplikasi, antarmuka modern yang disukai murid generasi Z, dan fitur kuis interaktif yang responsif.</li>
+                <li>• <strong>Kekurangan:</strong> Membutuhkan ketersediaan koneksi internet yang stabil untuk mengakses seluruh fitur multimedia secara optimal.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Belajar Mandiri (<em>Self-Regulated Learning</em> - Barry Zimmerman).</li>
+                <li>• Kerangka TPACK & Konstruktivisme Digital (Lev Vygotsky).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HASIL KERJA PANEL SIKLUS 3 (EDUKACIVIC) -->
+      <div id="panel-hasil-3" class="cycle-panel-hasil hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Web EdukaCivic — edukacivic.vercel.app</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Kunjungi Web ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="https://edukacivic.vercel.app" 
+                class="w-full h-[520px] border-0"
+                title="Platform Web EdukaCivic Siklus 3"
+                loading="lazy"
+              ></iframe>
+              <div class="p-3 bg-blue-50/60 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="font-bold text-[#1E1E1E]">Live Production URL:</span>
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] hover:underline">https://edukacivic.vercel.app</a>
+                </div>
+                <span class="px-2.5 py-0.5 bg-white border border-[#D8D1C5] rounded font-semibold text-[#1E1E1E]">Hasil Belajar Digital Siklus 3</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bukti Belajar • Siklus 3</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Platform Digital EdukaCivic</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Penggunaan platform EdukaCivic untuk memperkuat fase elaborasi dan turnamen game show materi UUD NRI 1945 di Siklus 3.</li>
+                <li>• <strong>Tujuan:</strong> Menjadi jembatan digital dalam menguji pemahaman konsep murid secara mandiri maupun berkelompok pasca-turnamen di kelas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menyajikan bank materi interaktif dan umpan balik langsung yang membantu siswa mereview kesalahan jawaban turnamen.</li>
+                <li>• <strong>Kekurangan:</strong> Memerlukan pemantauan guru terhadap rekam jejak penyelesaian modul siswa di dashboard.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Pembelajaran Berbantuan Komputer (<em>Computer-Assisted Learning</em>).</li>
+                <li>• Asesmen Formatif Digital (Hattie & Timperley).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HASIL KERJA PANEL SIKLUS 4 (EDUKACIVIC) -->
+      <div id="panel-hasil-4" class="cycle-panel-hasil hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">Web EdukaCivic — edukacivic.vercel.app</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Kunjungi Web ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="https://edukacivic.vercel.app" 
+                class="w-full h-[520px] border-0"
+                title="Platform Web EdukaCivic Siklus 4"
+                loading="lazy"
+              ></iframe>
+              <div class="p-3 bg-blue-50/60 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="font-bold text-[#1E1E1E]">Live Production URL:</span>
+                  <a href="https://edukacivic.vercel.app" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] hover:underline">https://edukacivic.vercel.app</a>
+                </div>
+                <span class="px-2.5 py-0.5 bg-white border border-[#D8D1C5] rounded font-semibold text-[#1E1E1E]">Hasil Belajar Digital Siklus 4</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Bukti Belajar • Siklus 4</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Platform Digital EdukaCivic</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Konsolidasi portofolio belajar digital akhir seluruh siklus pembelajaran PPL Mandiri di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Menjadi wadah etalase pencapaian kompetensi kewarganegaraan siswa yang dapat diakses secara berkelanjutan.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menumbuhkan kebanggaan murid atas hasil belajar digital yang dapat diakses publik dan dipertanggungjawabkan secara akademik.</li>
+                <li>• <strong>Kekurangan:</strong> Perlunya pemeliharaan berkala server dan hosting agar konten tetap aktif dan relevan.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Portofolio Digital Autentik (Helen Barrett).</li>
+                <li>• Pembelajaran Abad ke-21 (4C: Critical Thinking, Collaboration, Communication, Creativity).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 06: VIDEO PEMBELAJARAN (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="video" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>06</span>
+        <span>Frame: Video Mengajar Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Dokumentasi Audio-Visual Praktik Mengajar
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Video Praktik Pembelajaran (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('video', 2)" id="tab-video-2" class="cycle-btn is-active">Siklus 2</button>
+          <button onclick="switchTab('video', 3)" id="tab-video-3" class="cycle-btn">Siklus 3</button>
+          <button onclick="switchTab('video', 4)" id="tab-video-4" class="cycle-btn">Siklus 4</button>
+        </div>
+      </div>
+
+      <!-- Video Panel Siklus 2 (jLQCKjweRfo) -->
+      <div id="panel-video-2" class="cycle-panel-video">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">YouTube • Praktik Pembelajaran Siklus 2</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://youtu.be/jLQCKjweRfo?si=DzTU4DKq9ipum_pt" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Tonton di YouTube ↗</a>
+                </div>
+              </div>
+              <div class="relative w-full aspect-video bg-black">
+                <iframe 
+                  src="https://www.youtube.com/embed/jLQCKjweRfo" 
+                  class="w-full h-full border-0" 
+                  title="Video Praktik Pembelajaran Siklus 2 - Fadilatul Fajri"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Materi: Pengertian & Bentuk Konstitusi (P6)</span>
+                <span class="text-[#0D99FF] font-bold">Kelas VIII D SMPN 5</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Video Siklus 2 • P6</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Video Mengajar Siklus 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Merekam keterlaksanaan model pembelajaran kooperatif pada Pertemuan 6 (Bab 2) di ruang kelas VIII D SMPN 5 Purwokerto.</li>
+                <li>• <strong>Tujuan:</strong> Bahan evaluasi diri guru praktikan mengenai pengelolaan kelompok investigasi dan efektivitas teknik mini-galeri <em>Window Shopping</em>.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Suara dan artikulasi guru sangat jelas; interaksi dialogis mencairkan suasana dan membangkitkan keaktifan murid yang pendiam.</li>
+                <li>• <strong>Kekurangan:</strong> Sudut kamera statis di barisan depan perlu dilengkapi rekaman bergerak untuk menangkap dinamika di pos belanja ide pojok kelas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Refleksi Praktik Mengajar (<em>Reflection-on-Action</em> - Donald Schön).</li>
+                <li>• Analisis Interaksi Kelas (Ned Flanders - FIAC).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Panel Siklus 3 (P0Zcdx-9zjc) -->
+      <div id="panel-video-3" class="cycle-panel-video hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">YouTube • Praktik Pembelajaran Siklus 3</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://youtu.be/P0Zcdx-9zjc?si=-hfZoMZZd8sRwcUp" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Tonton di YouTube ↗</a>
+                </div>
+              </div>
+              <div class="relative w-full aspect-video bg-black">
+                <iframe 
+                  src="https://www.youtube.com/embed/P0Zcdx-9zjc" 
+                  class="w-full h-full border-0" 
+                  title="Video Praktik Pembelajaran Siklus 3 - Fadilatul Fajri"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Model: Teams Games Tournament (P10)</span>
+                <span class="text-[#0D99FF] font-bold">Game Show Interaktif</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Video Siklus 3 • P10</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Video Mengajar Siklus 3</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Merekam pelaksanaan model inovatif TGT "Pedoman Negaraku Game Show" di Pertemuan 10 Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Bahan telaah supervisi klinis DPL dan Guru Pamong terhadap penguasaan alur gamifikasi dan keterlibatan aktif kelompok.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Menangkap antusiasme luar biasa dari para murid saat babak tebak aksi dan kuis Smart TV berlangsung seru dan sportif.</li>
+                <li>• <strong>Kekurangan:</strong> Riuh sorak kemenangan tim menuntut guru memiliki isyarat penenang kelas yang telah disepakati bersama sebelumnya.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Teori Motivasi Berprestasi (David McClelland).</li>
+                <li>• Pembelajaran Berbasis Turnamen Kooperatif (Robert Slavin).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Panel Siklus 4 (CueO_58pdgQ) -->
+      <div id="panel-video-4" class="cycle-panel-video hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex items-center justify-between text-xs font-mono text-[#71717A]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span class="ml-2 font-bold text-[#1E1E1E]">YouTube • Praktik Pembelajaran Siklus 4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://youtu.be/CueO_58pdgQ?si=3ybiZ-qkodBpMkSj" target="_blank" rel="noopener noreferrer" class="text-[#0D99FF] font-bold hover:underline">Tonton di YouTube ↗</a>
+                </div>
+              </div>
+              <div class="relative w-full aspect-video bg-black">
+                <iframe 
+                  src="https://www.youtube.com/embed/CueO_58pdgQ" 
+                  class="w-full h-full border-0" 
+                  title="Video Praktik Pembelajaran Siklus 4 - Fadilatul Fajri"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Model: Game-Based Learning Blastroom & Gartic (P11)</span>
+                <span class="text-[#0D99FF] font-bold">Praktik Mandiri Penuh</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Video Siklus 4 • P11</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Analisis Video Mengajar Siklus 4</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Merekam unjuk kemandirian mengajar penuh pada siklus akhir evaluasi dan review materi UUD NRI 1945 di Kelas VIII D.</li>
+                <li>• <strong>Tujuan:</strong> Memvalidasi kemandirian pedagogik calon guru dalam mengintegrasikan teknologi digital mutakhir secara mandiri dan percaya diri.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Penguasaan teknologi instruksional sangat luwes, ritme kelas terkelola secara matang dari apersepsi hingga refleksi penutup.</li>
+                <li>• <strong>Kekurangan:</strong> Manajemen alokasi detik per soal pada platform kuis perlu disesuaikan dengan variasi kecepatan membaca murid.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Standar Kompetensi Guru Profesional (Kemendikbudristek).</li>
+                <li>• Teori Efikasi Diri Guru (<em>Teacher Self-Efficacy</em> - Albert Bandura).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 07: PENILAIAN GURU PAMONG (GP) (SIKLUS 2, 3, 4)
+         ======================================================================== -->
+    <section id="penilaian-gp" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>07</span>
+        <span>Frame: Penilaian GP Multi-Siklus</span>
+      </div>
+
+      <!-- Header & Cycle Switcher -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Evaluasi Resmi Supervisi Klinis • Modul & Praktik Mengajar
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Penilaian Guru Pamong (Siklus 2, 3, & 4)
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-zinc-100 p-1 rounded-lg border border-[#D8D1C5]">
+          <button onclick="switchTab('gp', 2)" id="tab-gp-2" class="cycle-btn is-active">Siklus 2</button>
+          <button onclick="switchTab('gp', 3)" id="tab-gp-3" class="cycle-btn">Siklus 3</button>
+          <button onclick="switchTab('gp', 4)" id="tab-gp-4" class="cycle-btn">Siklus 4</button>
+        </div>
+      </div>
+
+      <!-- Penilaian GP Panel Siklus 2 -->
+      <div id="panel-gp-2" class="cycle-panel-gp">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span id="gp-title-2" class="ml-2 font-bold text-[#1E1E1E] hidden sm:inline">Penilaian Modul GP Siklus 2.pdf</span>
+                  <div class="flex items-center gap-1 ml-2">
+                    <button type="button" onclick="switchGPDoc(2, 'modul')" id="gp-btn-2-modul" class="px-3 py-1 rounded bg-[#0D99FF] text-white font-bold text-[11px] shadow-sm transition-all">Modul Ajar</button>
+                    <button type="button" onclick="switchGPDoc(2, 'praktik')" id="gp-btn-2-praktik" class="px-3 py-1 rounded bg-white text-[#71717A] border border-[#D8D1C5] hover:text-[#1E1E1E] font-medium text-[11px] transition-all">Praktik Mengajar</button>
+                  </div>
+                </div>
+                <a id="gp-link-2" href="UAS/Penilaian%20Modul%20GP%20Siklus%202.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+              </div>
+              <iframe 
+                id="gp-iframe-2"
+                src="UAS/Penilaian%20Modul%20GP%20Siklus%202.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Lembar Penilaian Guru Pamong Siklus 2"
+              ></iframe>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Guru Pamong: Purwatiningsih, S.Pd. • Tanggal: 29 September 2026</span>
+                <span class="text-[#0D99FF] font-bold">Terverifikasi Resmi</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Penilaian • Siklus 2</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Evaluasi Guru Pamong Siklus 2</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Supervisi klinis resmi oleh Guru Pamong (Purwatiningsih, S.Pd.) terhadap modul P6 dan praktik mengajar tatap muka tanggal 29 September 2026.</li>
+                <li>• <strong>Tujuan:</strong> Menilai kesesuaian modul ajar dengan tahapan pembelajaran berdiferensiasi serta kompetensi dasar calon guru dalam mengelola kelas VIII D.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Seluruh indikator perangkat dan performa praktik mengajar memperoleh predikat Sangat Baik (skor sempurna di setiap deskriptor kunci).</li>
+                <li>• <strong>Kekurangan:</strong> Catatan reflektif menekankan pentingnya mempertahankan ritme transisi antarpos <em>Window Shopping</em>.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Supervisi Klinis Kolaboratif (Morris Cogan & Robert Goldhammer).</li>
+                <li>• Umpan Balik Formatif Reflektif (John Hattie & Helen Timperley).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Penilaian GP Panel Siklus 3 -->
+      <div id="panel-gp-3" class="cycle-panel-gp hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span id="gp-title-3" class="ml-2 font-bold text-[#1E1E1E] hidden sm:inline">Penilaian Modul GP Siklus 3.pdf</span>
+                  <div class="flex items-center gap-1 ml-2">
+                    <button type="button" onclick="switchGPDoc(3, 'modul')" id="gp-btn-3-modul" class="px-3 py-1 rounded bg-[#0D99FF] text-white font-bold text-[11px] shadow-sm transition-all">Modul Ajar</button>
+                    <button type="button" onclick="switchGPDoc(3, 'praktik')" id="gp-btn-3-praktik" class="px-3 py-1 rounded bg-white text-[#71717A] border border-[#D8D1C5] hover:text-[#1E1E1E] font-medium text-[11px] transition-all">Praktik Mengajar</button>
+                  </div>
+                </div>
+                <a id="gp-link-3" href="UAS/Penilaian%20Modul%20GP%20Siklus%203.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+              </div>
+              <iframe 
+                id="gp-iframe-3"
+                src="UAS/Penilaian%20Modul%20GP%20Siklus%203.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Lembar Penilaian Guru Pamong Siklus 3"
+              ></iframe>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Guru Pamong: Purwatiningsih, S.Pd. • Tanggal: 13 Oktober 2026</span>
+                <span class="text-[#0D99FF] font-bold">Terverifikasi Resmi</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Penilaian • Siklus 3</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Evaluasi Guru Pamong Siklus 3</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Supervisi klinis terhadap rancangan pembelajaran P10 dan performa turnamen TGT pada tanggal 13 Oktober 2026.</li>
+                <li>• <strong>Tujuan:</strong> Menilai kompetensi inovasi metodologi pengajaran dan kecakapan mengelola dinamika turnamen akademik di kelas.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Guru pamong mengapresiasi tinggi orisinalitas ide game show dan kelengkapan media fisik kartu tebak gaya aksi yang sangat interaktif.</li>
+                <li>• <strong>Kekurangan:</strong> Perlunya pemberian penguatan moral kepada kelompok yang belum memuncaki papan skor agar motivasi belajar tetap terjaga.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Supervisi Klinis Edukatif (Robert Goldhammer).</li>
+                <li>• Teori Pembelajaran Kooperatif TGT (Robert Slavin).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Penilaian GP Panel Siklus 4 -->
+      <div id="panel-gp-4" class="cycle-panel-gp hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7">
+            <div class="preview-embed-box">
+              <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  <span id="gp-title-4" class="ml-2 font-bold text-[#1E1E1E] hidden sm:inline">Penilaian Modul GP Siklus 4.pdf</span>
+                  <div class="flex items-center gap-1 ml-2">
+                    <button type="button" onclick="switchGPDoc(4, 'modul')" id="gp-btn-4-modul" class="px-3 py-1 rounded bg-[#0D99FF] text-white font-bold text-[11px] shadow-sm transition-all">Modul Ajar</button>
+                    <button type="button" onclick="switchGPDoc(4, 'praktik')" id="gp-btn-4-praktik" class="px-3 py-1 rounded bg-white text-[#71717A] border border-[#D8D1C5] hover:text-[#1E1E1E] font-medium text-[11px] transition-all">Praktik Mengajar</button>
+                  </div>
+                </div>
+                <a id="gp-link-4" href="UAS/Penilaian%20Modul%20GP%20Siklus%204.pdf" target="_blank" class="text-[#0D99FF] font-bold hover:underline">Buka Penuh ↗</a>
+              </div>
+              <iframe 
+                id="gp-iframe-4"
+                src="UAS/Penilaian%20Modul%20GP%20Siklus%204.pdf" 
+                class="w-full h-[520px] border-0"
+                title="Pratinjau Lembar Penilaian Guru Pamong Siklus 4"
+              ></iframe>
+              <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex flex-wrap items-center justify-between text-xs font-mono text-[#71717A] gap-2">
+                <span>Guru Pamong: Purwatiningsih, S.Pd. • Tanggal: 27 Oktober 2026</span>
+                <span class="text-[#0D99FF] font-bold">Terverifikasi Resmi</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <div class="border-b border-[#0D99FF] pb-2 mb-3">
+              <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Kajian Penilaian • Siklus 4</span>
+              <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Evaluasi Guru Pamong Siklus 4</h3>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">01. Konteks & Tujuan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Konteks:</strong> Penilaian kinerja akhir praktik pembelajaran mandiri penuh pada tanggal 27 Oktober 2026 mencakup perangkat evaluasi P11 dan unjuk kemandirian di kelas.</li>
+                <li>• <strong>Tujuan:</strong> Menetapkan pengesahan nilai akhir kompetensi pedagogik, kepribadian, sosial, dan profesional calon guru PPG.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">02. Kelebihan & Kekurangan</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• <strong>Kelebihan:</strong> Memperoleh predikat kelulusan Sangat Baik (A) dengan pujian khusus atas kemahiran memanfaatkan platform digital interaktif (Blastroom & Gartic).</li>
+                <li>• <strong>Kekurangan:</strong> Rekomendasi untuk senantiasa merawat komitmen pedagogis dan etos inovasi pembelajaran saat bertugas di sekolah penempatan.</li>
+              </ul>
+            </div>
+            <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+              <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2">03. Landasan Teori Pedagogi</h4>
+              <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+                <li>• Evaluasi Kinerja Pendidik Profesional (Danielson Framework for Teaching).</li>
+                <li>• Standar Profesi Guru Indonesia (Kemendikbudristek).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="bg-white border-t border-[#D8D1C5] py-10 text-xs font-mono text-[#71717A] mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold text-[#1E1E1E]">© 2026 EPORTFOLIO 1 PPL Mandiri — Fadilatul Fajri, S.Pd.</p>
+        <p class="text-[11px] text-[#71717A] mt-0.5">Program Studi Pendidikan Profesi Guru (PPKn) Universitas Muhammadiyah Purwokerto</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="text-[#0D99FF] font-bold hover:underline">← Kembali ke Halaman Utama</a>
+        <a href="#top" class="text-[#1E1E1E] hover:text-[#0D99FF] font-bold transition-colors">Ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Interactive Cycle Switcher Script -->
+  <script>
+    // Tab categories (01 Modul, 02 Media, 03 Bahan, 04 LKM, 05 Hasil, 06 Video, 07 GP)
+    const categories = ['modul', 'media', 'bahan', 'lkm', 'hasil', 'video', 'gp'];
+
+    function switchTab(cat, cycleNum) {
+      // Hide all panels for this category
+      [2, 3, 4].forEach(c => {
+        const panel = document.getElementById(`panel-${cat}-${c}`);
+        const btn = document.getElementById(`tab-${cat}-${c}`);
+        if (panel) panel.classList.add('hidden');
+        if (btn) btn.classList.remove('is-active');
+      });
+
+      // Show selected panel
+      const targetPanel = document.getElementById(`panel-${cat}-${cycleNum}`);
+      const targetBtn = document.getElementById(`tab-${cat}-${cycleNum}`);
+      if (targetPanel) targetPanel.classList.remove('hidden');
+      if (targetBtn) targetBtn.classList.add('is-active');
+    }
+
+    // Master Global Cycle Switcher
+    function setGlobalCycle(cycleNum) {
+      categories.forEach(cat => {
+        switchTab(cat, cycleNum);
+      });
+
+      // Update global buttons
+      [2, 3, 4].forEach(c => {
+        const gBtn = document.getElementById(`global-btn-${c}`);
+        if (gBtn) {
+          if (c === cycleNum) gBtn.classList.add('is-active');
+          else gBtn.classList.remove('is-active');
+        }
+      });
+    }
+
+    // Penilaian GP Sub-Doc Switcher (Modul vs Praktik)
+    const gpDocs = {
+      2: {
+        modul: { file: 'UAS/Penilaian%20Modul%20GP%20Siklus%202.pdf', title: 'Penilaian Modul GP Siklus 2.pdf' },
+        praktik: { file: 'UAS/Penilaian%20GP%20Praktik%20Siklus%202.pdf', title: 'Penilaian GP Praktik Siklus 2.pdf' }
+      },
+      3: {
+        modul: { file: 'UAS/Penilaian%20Modul%20GP%20Siklus%203.pdf', title: 'Penilaian Modul GP Siklus 3.pdf' },
+        praktik: { file: 'UAS/Penilaian%20GP%20Praktik%20Siklus%203.pdf', title: 'Penilaian GP Praktik Siklus 3.pdf' }
+      },
+      4: {
+        modul: { file: 'UAS/Penilaian%20Modul%20GP%20Siklus%204.pdf', title: 'Penilaian Modul GP Siklus 4.pdf' },
+        praktik: { file: 'UAS/Penilaian%20GP%20Praktik%20Siklus%204.pdf', title: 'Penilaian GP Praktik Siklus 4.pdf' }
+      }
+    };
+
+    function switchGPDoc(cycleNum, type) {
+      const iframe = document.getElementById(`gp-iframe-${cycleNum}`);
+      const link = document.getElementById(`gp-link-${cycleNum}`);
+      const titleSpan = document.getElementById(`gp-title-${cycleNum}`);
+      const btnModul = document.getElementById(`gp-btn-${cycleNum}-modul`);
+      const btnPraktik = document.getElementById(`gp-btn-${cycleNum}-praktik`);
+
+      if (!gpDocs[cycleNum] || !gpDocs[cycleNum][type]) return;
+      const target = gpDocs[cycleNum][type];
+
+      if (iframe) iframe.src = target.file;
+      if (link) link.href = target.file;
+      if (titleSpan) titleSpan.textContent = target.title;
+
+      if (btnModul && btnPraktik) {
+        if (type === 'modul') {
+          btnModul.className = 'px-3 py-1 rounded bg-[#0D99FF] text-white font-bold text-[11px] shadow-sm transition-all';
+          btnPraktik.className = 'px-3 py-1 rounded bg-white text-[#71717A] border border-[#D8D1C5] hover:text-[#1E1E1E] font-medium text-[11px] transition-all';
+        } else {
+          btnPraktik.className = 'px-3 py-1 rounded bg-[#0D99FF] text-white font-bold text-[11px] shadow-sm transition-all';
+          btnModul.className = 'px-3 py-1 rounded bg-white text-[#71717A] border border-[#D8D1C5] hover:text-[#1E1E1E] font-medium text-[11px] transition-all';
+        }
+      }
+    }
+
+    // Scroll Navbar Kotak Tumpul -> Oval Menggantung
+    window.addEventListener('scroll', () => {
+      const navWrapper = document.getElementById('main-nav-wrapper');
+      if (navWrapper) {
+        if (window.scrollY > 40) {
+          navWrapper.classList.add('is-scrolled');
+        } else {
+          navWrapper.classList.remove('is-scrolled');
+        }
+      }
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const mobileTrigger = document.getElementById('mobile-menu-trigger');
+    const mobileMenu = document.getElementById('mobile-nav-menu');
+    if (mobileTrigger && mobileMenu) {
+      mobileTrigger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

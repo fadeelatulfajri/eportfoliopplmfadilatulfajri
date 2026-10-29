@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LK 3 & UTS: Artefak & Analisis | Fadilatul Fajri, S.Pd. - PPL Mandiri 1</title>
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="shortcut icon" href="logo/logo.png">
+
+  <!-- Custom Editorial & Figma CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            figmaBlue: '#0D99FF',
+            figmaDark: '#1E1E1E',
+            figmaBorder: '#D8D1C5',
+          },
+          fontFamily: {
+            heading: ['"Syne"', '"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFA;
+      color: #1E1E1E;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Embedded Box Styling */
+    .preview-embed-box {
+      background-color: #FFFFFF;
+      border: 1px solid #D8D1C5;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Filter Pill Active State */
+    .filter-pill {
+      border: 1px solid #D8D1C5;
+      background-color: #FFFFFF;
+      color: #1E1E1E;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-pill:hover, .filter-pill.is-active {
+      background-color: #0D99FF;
+      color: #FFFFFF;
+      border-color: #0D99FF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(13, 153, 255, 0.2);
+    }
+  </style>
+</head>
+<body id="top" class="figma-canvas-bg text-[#1E1E1E] selection:bg-[#0D99FF] selection:text-white">
+
+  <!-- ========================================================================
+       TOP MICRO-BAR
+       ======================================================================== -->
+  <div class="border-b border-[#D8D1C5] bg-white/80 backdrop-blur-sm py-2 px-4 sm:px-8 text-[11px] font-mono text-[#71717A] flex flex-wrap items-center justify-between gap-2">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#0D99FF]"></span>
+      <span class="font-bold text-[#1E1E1E] uppercase">LK 3 & UTS • ARTEFAK & ANALISIS</span>
+      <span class="text-[#D8D1C5]">•</span>
+      <span>PPG CALON GURU GELOMBANG 1 TAHUN 2026</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span>PPKn UMP</span>
+      <span class="text-[#D8D1C5]">•</span>
+      <span>SMPN 5 PURWOKERTO</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       1. MAIN NAVBAR (KOTAK TUMPUL -> OVAL MENGGANTUNG)
+       ======================================================================== -->
+  <header id="main-nav-wrapper" class="main-nav-wrapper">
+    <div class="main-nav-container">
+      
+      <!-- Brand Wordmark: Fad1latul Fajrı vision -->
+      <a href="index.html#hero" class="brand-wordmark-link">
+        <span>Fad<span class="text-[#DC2626] font-extrabold mx-[0.5px]">1</span>latul</span>
+        <span>Fajr<span class="relative inline-block">ı<svg class="sun-dot-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></g></svg></span></span>
+        <span class="relative inline-block ml-1">
+          <span class="text-[#0D99FF] font-extrabold text-xs sm:text-sm tracking-wider lowercase">vision</span>
+          <svg class="glasses-icon-wrap" viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="8" cy="8" r="5.5" class="fill-blue-50/80 stroke-current"/>
+            <circle cx="24" cy="8" r="5.5" class="fill-blue-50/80 stroke-current"/>
+            <path d="M13.5 7.5 Q16 6 18.5 7.5"/>
+            <path d="M2.5 7.5 L0.5 6.5"/>
+            <path d="M29.5 7.5 L31.5 6.5"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Track -->
+      <nav id="desktop-nav" class="hidden lg:flex items-center">
+        <div id="nav-links-track" class="nav-links-track">
+          <div id="nav-liquid-blob" class="nav-liquid-blob"></div>
+
+          <a href="index.html#hero" class="nav-link-item">Beranda</a>
+          <a href="index.html#profil" class="nav-link-item">Profil Mahasiswa</a>
+          <a href="lk3-uts.html" class="nav-link-item is-active">LK3 & dan UTS</a>
+          <a href="uas.html" class="nav-link-item">UAS</a>
+          <a href="index.html#refleksi" class="nav-link-item">Refleksi</a>
+          <a href="index.html#galeri" class="nav-link-item">Dokumentasi</a>
+          <a href="index.html#institusi" class="nav-link-item">Instansi</a>
+          <a href="index.html#kontak" class="nav-link-item">Kontak</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        id="mobile-menu-trigger" 
+        aria-label="Buka Navigasi" 
+        class="lg:hidden p-2 text-[#1E1E1E] border border-[#D8D1C5] hover:border-[#0D99FF] rounded-lg bg-white/80 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden mt-2 max-w-sm mx-auto bg-white/95 backdrop-blur-md border border-[#D8D1C5] rounded-2xl p-4 shadow-xl space-y-1 text-xs font-heading font-semibold uppercase pointer-events-auto">
+      <a href="index.html#hero" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Beranda</a>
+      <a href="index.html#profil" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Profil Mahasiswa</a>
+      <a href="lk3-uts.html" class="block py-2.5 px-3 rounded-lg text-[#0D99FF] bg-blue-50 font-bold">LK3 & dan UTS</a>
+      <a href="uas.html" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">UAS</a>
+      <a href="index.html#refleksi" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Refleksi</a>
+      <a href="index.html#galeri" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Dokumentasi</a>
+      <a href="index.html#institusi" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Instansi</a>
+      <a href="index.html#kontak" class="block py-2.5 px-3 rounded-lg text-[#1E1E1E] hover:bg-zinc-100 transition-colors">Kontak</a>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       PAGE HERO / BANNER HEADER (SECTION 1: FOTO 6 BACKGROUND 30% TRANSPARENCY WIDE)
+       ======================================================================== -->
+  <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    
+    <!-- Hero Selection Frame Header dengan Background Foto 6 Transparansi 30% Wide -->
+    <div class="relative bg-white border border-[#0D99FF] rounded-2xl p-8 sm:p-12 shadow-sm overflow-hidden">
+      
+      <!-- FOTO 6 BACKGROUND 30% TRANSPARENCY WIDE -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="images/foto%206.jfif" 
+          alt="Background Dokumentasi Pembelajaran Lapangan SMPN 5 Purwokerto" 
+          class="w-full h-full object-cover object-center opacity-30 filter saturate-[0.9]"
+        />
+        <div class="absolute inset-0 bg-white/35 backdrop-blur-[0.5px]"></div>
+      </div>
+
+      <!-- 4 Corner Handles -->
+      <div class="figma-handle handle-tl z-20"></div>
+      <div class="figma-handle handle-tr z-20"></div>
+      <div class="figma-handle handle-bl z-20"></div>
+      <div class="figma-handle handle-br z-20"></div>
+
+      <!-- Top Frame Label -->
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm z-20">
+        <span>Frame</span>
+        <span>LK 3 & UTS • Pancasila di Kehidupan Bangsaku • Cooperative Learning</span>
+      </div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pt-2">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 text-[#0D99FF] border border-[#0D99FF]/40 font-mono text-xs font-bold rounded-sm mb-4 shadow-sm backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-[#0D99FF]"></span>
+            LEMBAR KERJA 3 & UJIAN TENGAH SEMESTER
+          </div>
+          <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-[#1E1E1E] uppercase tracking-tight leading-tight">
+            Artefak & Analisis Pembelajaran
+          </h1>
+          <p class="font-body text-sm sm:text-base text-[#2E2E2E] mt-3 leading-relaxed font-medium">
+            Dokumentasi komprehensif perangkat perencanaan, media Canva interaktif, bahan ajar, instrumen evaluasi, dan unjuk kerja pembelajaran terbimbing materi <strong>Pancasila di Kehidupan Bangsaku</strong> dengan model <strong>Cooperative Learning</strong> di Kelas VIII D SMP Negeri 5 Purwokerto disertai analisis pedagogi kritis berstandar PPG Calon Guru.
+          </p>
+        </div>
+
+        <!-- Meta Details -->
+        <div class="flex flex-wrap lg:flex-col items-start lg:items-end gap-2 text-xs font-mono">
+          <span class="px-3 py-1.5 bg-white/95 border border-[#D8D1C5] rounded-sm text-[#1E1E1E] font-bold shadow-sm backdrop-blur-sm">
+            Fase D • Kelas VIII D
+          </span>
+          <span class="px-3 py-1.5 bg-white/95 border border-[#0D99FF]/40 rounded-sm text-[#0D99FF] font-bold shadow-sm backdrop-blur-sm">
+            Materi: Pancasila di Kehidupan Bangsaku
+          </span>
+          <span class="px-3 py-1.5 bg-white/95 border border-[#1E1E1E]/30 rounded-sm text-[#1E1E1E] font-bold shadow-sm backdrop-blur-sm">
+            Model: Cooperative Learning
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Jump Toolbar (8 Filter Pills) -->
+      <div class="relative z-10 border-t border-[#D8D1C5]/80 pt-6">
+        <div class="text-[11px] font-mono text-[#4A4A4A] uppercase tracking-wider font-bold mb-3">
+          Lompat Langsung ke Artefak:
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <a href="#modul-ajar" class="filter-pill"><span>01</span><span>Modul Ajar</span></a>
+          <a href="#media-ajar" class="filter-pill"><span>02</span><span>Media Ajar</span></a>
+          <a href="#bahan-ajar" class="filter-pill"><span>03</span><span>Bahan Ajar</span></a>
+          <a href="#lkm" class="filter-pill"><span>04</span><span>LKM</span></a>
+          <a href="#hasil-kerja" class="filter-pill"><span>05</span><span>Hasil Kerja Murid</span></a>
+          <a href="#video" class="filter-pill"><span>06</span><span>Video Pembelajaran</span></a>
+          <a href="#penilaian-gp" class="filter-pill"><span>07</span><span>Penilaian GP</span></a>
+          <a href="#non-mengajar" class="filter-pill"><span>08</span><span>Kegiatan Non Mengajar</span></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================
+         ARTEFAK 01: MODUL AJAR (COOPERATIVE LEARNING)
+         ======================================================================== -->
+    <section id="modul-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>01</span>
+        <span>Frame: Modul Ajar</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Perencanaan Pembelajaran • Cooperative Learning
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Modul Ajar Kurikulum Merdeka (Pancasila di Kehidupan Bangsaku)
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <a 
+            href="LK3%20%26%20UTS/MODUL%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-3.5 py-1.5 bg-[#0D99FF] hover:bg-blue-600 text-white font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 shadow-sm"
+          >
+            <span>Buka Tab Baru</span>
+            <span>↗</span>
+          </a>
+          <a 
+            href="LK3%20%26%20UTS/MODUL%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            download
+            class="px-3.5 py-1.5 bg-white border border-[#D8D1C5] hover:border-[#0D99FF] text-[#1E1E1E] font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5"
+          >
+            <span>Unduh PDF</span>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom: Kiri Pratinjau Dokumen, Kanan Analisis Poin-Poin -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau PDF (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box">
+            <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2 flex items-center justify-between text-xs font-mono text-[#71717A]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                <span class="ml-2 font-semibold text-[#1E1E1E]">MODUL AJAR P1 PPLM FADILATUL FAJRI.pdf</span>
+              </div>
+              <span>1.6 MB • PDF</span>
+            </div>
+            <iframe 
+              src="LK3%20%26%20UTS/MODUL%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+              class="w-full h-[520px] border-0"
+              title="Pratinjau Modul Ajar"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Modul Ajar</h3>
+          </div>
+
+          <!-- Poin 1: Analisis Konteks & Tujuan -->
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Diterapkan pada Fase D di Kelas VIII D SMPN 5 Purwokerto materi pokok Pancasila di Kehidupan Bangsaku.</li>
+              <li>• <strong>Tujuan:</strong> Menuntun murid menelaah nilai-nilai luhur Pancasila dalam keseharian bangsa dan menguatkan karakter melalui model <em>Cooperative Learning</em>.</li>
+            </ul>
+          </div>
+
+          <!-- Poin 2: Kelebihan & Kekurangan -->
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Sintaks <em>Cooperative Learning</em> membangun interdependensi positif, pembagian peran aktif, dan tanggung jawab individu dalam kelompok.</li>
+              <li>• <strong>Kekurangan:</strong> Penataan dinamika kelompok heterogen membutuhkan alokasi waktu awal ekstra agar seluruh anggota terlibat seimbang.</li>
+            </ul>
+          </div>
+
+          <!-- Poin 3: Landasan Teori Pedagogi -->
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Teori Belajar Kooperatif (<em>Cooperative Learning Theory</em> - Robert Slavin / Johnson & Johnson).</li>
+              <li>• Teori Konstruktivisme Sosial Vygotsky (<em>Scaffolding</em> & <em>Zone of Proximal Development</em>).</li>
+              <li>• Filosofi Pendidikan Ki Hadjar Dewantara (pembelajaran yang menuntun kodrat dan berpihak pada murid).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 02: MEDIA AJAR (CANVA EMBED KODE RESMI USER)
+         ======================================================================== -->
+    <section id="media-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>02</span>
+        <span>Frame: Media Ajar Canva</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Media Pembelajaran Digital Canva • TPACK Framework
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Slide Interaktif Canva: Pertemuan 1 BAB 1 (Pancasila di Kehidupan Bangsaku)
+          </h2>
+        </div>
+        <div>
+          <a 
+            href="https://www.canva.com/design/DAHRKbdT9pY/zKt1TLjLz7yvKiOFKLzbYg/view?utm_content=DAHRKbdT9pY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-[#0D99FF] hover:bg-blue-600 text-white font-mono text-xs font-bold rounded-sm transition-colors inline-flex items-center gap-2 shadow-sm"
+          >
+            <span>Buka di Canva ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau Canva Menggunakan Kode Embed Resmi User (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box p-4 bg-zinc-50 border border-[#D8D1C5]">
+            <div class="flex items-center justify-between pb-3 mb-2 border-b border-[#E5E5E5] text-xs font-mono text-[#71717A]">
+              <span class="font-bold text-[#1E1E1E]">Canva Interactive Embed</span>
+              <span class="text-[#0D99FF] font-semibold">Pertemuan 1 BAB 1</span>
+            </div>
+
+            <!-- KODE EMBED CANVA RESMI DARI PENGGUNA -->
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+             padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0.5em; margin-bottom: 0.9em; overflow: hidden;
+             border-radius: 8px; will-change: transform;">
+              <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                src="https://www.canva.com/design/DAHRKbdT9pY/zKt1TLjLz7yvKiOFKLzbYg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+              </iframe>
+            </div>
+            
+            <div class="pt-2 flex items-center justify-between flex-wrap gap-2 text-xs font-mono">
+              <div>
+                <a href="https://www.canva.com/design/DAHRKbdT9pY/zKt1TLjLz7yvKiOFKLzbYg/view?utm_content=DAHRKbdT9pY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-[#0D99FF] hover:underline font-bold">Pertemuan 1 BAB 1</a> 
+                <span class="text-[#71717A]">oleh Peserta PPG 48221</span>
+              </div>
+              <span class="px-2.5 py-0.5 bg-blue-50 text-[#0D99FF] border border-[#0D99FF]/30 font-semibold rounded-sm">
+                Fase D • SMPN 5
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Media Ajar</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Slide presentasi digital interaktif Canva materi Bab 1 Pertemuan 1 "Pancasila di Kehidupan Bangsaku" untuk pembelajaran tatap muka di Kelas VIII D.</li>
+              <li>• <strong>Tujuan:</strong> Memvisualisasikan pengamalan nilai-nilai sila Pancasila dalam realitas kehidupan berbangsa agar lebih menarik, interaktif, dan mudah dipahami.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Desain visual Canva modern, infografis sila Pancasila runtut, tipografi jelas, dan mendukung pembelajaran kooperatif.</li>
+              <li>• <strong>Kekurangan:</strong> Memerlukan proyektor LCD dan koneksi internet stabil saat sinkronisasi tayangan digital.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Kerangka Kerja TPACK (<em>Technological Pedagogical Content Knowledge</em> - Mishra & Koehler).</li>
+              <li>• Teori Kognitif Pembelajaran Multimedia (<em>Cognitive Theory of Multimedia Learning</em> - Richard Mayer).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 03: BAHAN AJAR
+         ======================================================================== -->
+    <section id="bahan-ajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>03</span>
+        <span>Frame: Bahan Ajar</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Bahan Bacaan Siswa • Kontekstual Karakter Bangsa
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Bahan Ajar Siswa (Pancasila di Kehidupan Bangsaku)
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <a 
+            href="LK3%20%26%20UTS/BAHAN%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-3.5 py-1.5 bg-[#0D99FF] hover:bg-blue-600 text-white font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 shadow-sm"
+          >
+            <span>Buka Tab Baru</span>
+            <span>↗</span>
+          </a>
+          <a 
+            href="LK3%20%26%20UTS/BAHAN%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            download
+            class="px-3.5 py-1.5 bg-white border border-[#D8D1C5] hover:border-[#0D99FF] text-[#1E1E1E] font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5"
+          >
+            <span>Unduh PDF</span>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau PDF (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box">
+            <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2 flex items-center justify-between text-xs font-mono text-[#71717A]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                <span class="ml-2 font-semibold text-[#1E1E1E]">BAHAN AJAR P1 PPLM FADILATUL FAJRI.pdf</span>
+              </div>
+              <span>1.1 MB • PDF</span>
+            </div>
+            <iframe 
+              src="LK3%20%26%20UTS/BAHAN%20AJAR%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+              class="w-full h-[520px] border-0"
+              title="Pratinjau Bahan Ajar"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Bahan Ajar</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Bahan bacaan pendamping modul ajar yang mengaitkan nilai-nilai Pancasila dengan budaya musyawarah dan kearifan lokal masyarakat.</li>
+              <li>• <strong>Tujuan:</strong> Memberikan referensi bacaan kontekstual bagi murid untuk memperdalam pemahaman penerapan sila Pancasila dalam keseharian.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Bahasa dialogis yang komunikatif, dekat dengan kehidupan remaja, dan memuat contoh kasus konkret pengamalan Pancasila.</li>
+              <li>• <strong>Kekurangan:</strong> Perlu penyajian infografis ringkas tambahan bagi siswa yang memerlukan stimulus visual lebih cepat.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <em>Culturally Responsive Teaching</em> (CRT - Geneva Gay & Gloria Ladson-Billings).</li>
+              <li>• Teori Belajar Bermakna (<em>Meaningful Learning Theory</em> - David Ausubel).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 04: LKM (LEMBAR KERJA MURID)
+         ======================================================================== -->
+    <section id="lkm" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>04</span>
+        <span>Frame: LKM</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Instrumen Aktivitas Kelompok • Cooperative Learning
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Lembar Kerja Murid (LKM) Berbasis Cooperative Learning
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <a 
+            href="LK3%20%26%20UTS/LKM%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-3.5 py-1.5 bg-[#0D99FF] hover:bg-blue-600 text-white font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 shadow-sm"
+          >
+            <span>Buka Tab Baru</span>
+            <span>↗</span>
+          </a>
+          <a 
+            href="LK3%20%26%20UTS/LKM%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+            download
+            class="px-3.5 py-1.5 bg-white border border-[#D8D1C5] hover:border-[#0D99FF] text-[#1E1E1E] font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5"
+          >
+            <span>Unduh PDF</span>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau PDF (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box">
+            <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2 flex items-center justify-between text-xs font-mono text-[#71717A]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                <span class="ml-2 font-semibold text-[#1E1E1E]">LKM P1 PPLM FADILATUL FAJRI.pdf</span>
+              </div>
+              <span>229 KB • PDF</span>
+            </div>
+            <iframe 
+              src="LK3%20%26%20UTS/LKM%20P1%20PPLM%20FADILATUL%20FAJRI.pdf" 
+              class="w-full h-[520px] border-0"
+              title="Pratinjau LKM"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian LKM</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Lembar aktivitas penugasan kelompok materi Pancasila di Kehidupan Bangsaku untuk melatih kerja sama tim murid Kelas VIII D.</li>
+              <li>• <strong>Tujuan:</strong> Memandu murid mendiskusikan studi kasus penerapan nilai Pancasila, merumuskan solusi bersama, dan mempresentasikan hasil kerja kelompok.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Instruksi penugasan sistematis, mendorong pembagian peran aktif setiap anggota, serta memantik penalaran kritis (HOTS).</li>
+              <li>• <strong>Kekurangan:</strong> Perlu rubrik penilaian diri (<em>self-assessment</em>) dan antarteman yang lebih terperinci pada lembar kerja.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Teori Belajar Kooperatif (<em>Cooperative Learning</em> - Johnson & Johnson).</li>
+              <li>• Taksonomi Bloom Terkini (Analisis level C4 dan Evaluasi level C5).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 05: HASIL KERJA MURID
+         ======================================================================== -->
+    <section id="hasil-kerja" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>05</span>
+        <span>Frame: Hasil Kerja Murid</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Bukti Belajar Autentik • Produk Kelompok Kooperatif
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Hasil Kerja Murid (Penyelesaian LKM Kooperatif Kelas VIII D)
+          </h2>
+        </div>
+        <div>
+          <a 
+            href="LK3%20%26%20UTS/Hasil%20Kerja%20Murid.jpeg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-3.5 py-1.5 bg-[#0D99FF] hover:bg-blue-600 text-white font-mono text-xs font-bold rounded-sm transition-colors flex items-center gap-1.5 shadow-sm"
+          >
+            <span>Lihat Resolusi Penuh</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau Gambar (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box p-3 bg-zinc-100">
+            <div class="overflow-hidden rounded border border-[#D8D1C5] bg-white group relative">
+              <img 
+                src="LK3%20%26%20UTS/Hasil%20Kerja%20Murid.jpeg" 
+                alt="Dokumentasi Lembar Hasil Diskusi & Pengerjaan LKM Murid Kelas VIII D"
+                class="w-full h-[480px] object-contain group-hover:scale-[1.02] transition-transform duration-300"
+                loading="lazy"
+              >
+              <div class="absolute bottom-3 right-3 bg-black/75 text-white text-[11px] font-mono px-2.5 py-1 rounded backdrop-blur-sm">
+                1280 × 720 • JPEG
+              </div>
+            </div>
+            <div class="p-3 text-xs font-mono text-[#71717A] flex items-center justify-between">
+              <span>Bukti Fisik Asesmen Autentik</span>
+              <span class="text-[#0D99FF] font-bold">Materi: Pancasila di Kehidupan Bangsaku</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Hasil Kerja Murid</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Lembar pengerjaan LKM autentik hasil diskusi kelompok kooperatif materi Pancasila di Kehidupan Bangsaku di Kelas VIII D.</li>
+              <li>• <strong>Tujuan:</strong> Menjadi bukti fisik asesmen proses belajar (<em>assessment as learning</em>) atas kemampuan murid menyimpulkan nilai Pancasila secara bersama.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Memperlihatkan hasil musyawarah dan pemikiran murni kelompok; keterlibatan murid dalam menuliskan ide terlihat nyata.</li>
+              <li>• <strong>Kekurangan:</strong> Kedalaman argumentasi dan kerapian sajian tertulis bervariasi antar-kelompok belajar.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Teori Asesmen Autentik (<em>Authentic Assessment</em> - Grant Wiggins).</li>
+              <li>• Teori Belajar Sosial (<em>Social Learning Theory</em> - Albert Bandura).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 06: VIDEO PEMBELAJARAN (YOUTUBE EMBED)
+         ======================================================================== -->
+    <section id="video" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>06</span>
+        <span>Frame: Video Pembelajaran</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Dokumentasi Audio-Visual Praktik Pembelajaran Cooperative Learning
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Video Praktik Mengajar Terbimbing Siklus 1 (Pancasila di Kehidupan Bangsaku)
+          </h2>
+        </div>
+        <div>
+          <a 
+            href="https://youtu.be/mpRRo2oLYYs?si=0jTGXWqAZPY2ZGb2" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-mono text-xs font-bold rounded-sm transition-colors inline-flex items-center gap-2 shadow-sm"
+          >
+            <span>Tonton di YouTube</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau Video YouTube Responsive (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box overflow-hidden">
+            <div class="relative w-full aspect-video bg-black">
+              <iframe 
+                src="https://www.youtube.com/embed/mpRRo2oLYYs" 
+                title="Video Praktik Pembelajaran Siklus 1 PPL Mandiri Fadilatul Fajri" 
+                class="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="p-3 bg-zinc-50 border-t border-[#D8D1C5] flex items-center justify-between text-xs font-mono text-[#71717A]">
+              <span>Kanal Resmi: YouTube Edukasi</span>
+              <span class="text-[#0D99FF] font-semibold">SMPN 5 Purwokerto • Kelas VIII D</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Video Mengajar</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Rekaman pelaksanaan pembelajaran terbimbing materi Pancasila di Kehidupan Bangsaku menggunakan model <em>Cooperative Learning</em> di Kelas VIII D.</li>
+              <li>• <strong>Tujuan:</strong> Merekam dinamika interaksi kooperatif antarmurid, pembagian kelompok, serta keterlaksanaan langkah-langkah pembelajaran.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Interaksi aktif murid saat berdiskusi kelompok terekam jelas; instruksi dan scaffolding guru tersampaikan dengan baik.</li>
+              <li>• <strong>Kekurangan:</strong> Jangkauan mikrofon dan sudut kamera statis belakang membuat diskusi kelompok meja samping kurang tertangkap detail.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Praktik Reflektif Guru (<em>Reflective Practice</em> - Donald Schön).</li>
+              <li>• Analisis Interaksi Kelas (<em>Classroom Interaction Analysis</em> - Ned Flanders).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 07: PENILAIAN GURU PAMONG (GP)
+         ======================================================================== -->
+    <section id="penilaian-gp" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>07</span>
+        <span>Frame: Penilaian GP</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Evaluasi Resmi & Supervisi Klinis
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Lembar Penilaian Guru Pamong (Modul & Praktik Siklus 1)
+          </h2>
+        </div>
+        
+        <!-- Toggle Tabs Dokumen GP -->
+        <div class="flex items-center gap-2 bg-zinc-100 p-1 rounded border border-[#D8D1C5]">
+          <button 
+            id="btn-gp-modul" 
+            onclick="switchGpDoc('modul')"
+            class="px-3 py-1 font-mono text-xs font-bold rounded transition-all bg-[#0D99FF] text-white shadow-sm"
+          >
+            Penilaian Modul
+          </button>
+          <button 
+            id="btn-gp-praktik" 
+            onclick="switchGpDoc('praktik')"
+            class="px-3 py-1 font-mono text-xs font-bold rounded transition-all text-[#1E1E1E] hover:bg-white"
+          >
+            Penilaian Praktik
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Pratinjau PDF Tabbed (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box">
+            <div class="bg-zinc-100 border-b border-[#D8D1C5] px-4 py-2 flex items-center justify-between text-xs font-mono text-[#71717A]">
+              <span id="gp-doc-title" class="font-semibold text-[#1E1E1E]">Penilaian Modul GP Siklus 1.pdf</span>
+              <div class="flex items-center gap-2">
+                <a 
+                  id="gp-doc-link" 
+                  href="LK3%20%26%20UTS/Penilaian%20Modul%20GP%20Siklus%201.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="text-[#0D99FF] hover:underline font-bold"
+                >
+                  Buka Penuh ↗
+                </a>
+              </div>
+            </div>
+            <iframe 
+              id="gp-doc-iframe"
+              src="LK3%20%26%20UTS/Penilaian%20Modul%20GP%20Siklus%201.pdf" 
+              class="w-full h-[520px] border-0"
+              title="Pratinjau Penilaian GP"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Penilaian Guru Pamong</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Evaluasi supervisi klinis oleh Guru Pamong terhadap modul ajar dan praktik pembelajaran <em>Cooperative Learning</em> materi Pancasila di Kehidupan Bangsaku.</li>
+              <li>• <strong>Tujuan:</strong> Menilai kesesuaian perangkat ajar dan performa pedagogi mahasiswa PPL Mandiri secara objektif berstandar PPG.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Rubrik penilaian komprehensif; Guru Pamong memberikan umpan balik langsung yang sangat berguna bagi perbaikan siklus berikutnya.</li>
+              <li>• <strong>Kekurangan:</strong> Waktu pembahasan umpan balik pasca-pembelajaran terbatas karena jadwal kegiatan guru pamong di sekolah.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Supervisi Klinis Edukatif (<em>Clinical Supervision</em> - Robert Goldhammer & Morris Cogan).</li>
+              <li>• Asesmen untuk Pembelajaran (<em>Assessment for Learning</em> - Paul Black & Dylan Wiliam).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ARTEFAK 08: KEGIATAN NON MENGAJAR (EKSTRAKURIKULER BOLA VOLI)
+         ======================================================================== -->
+    <section id="non-mengajar" class="relative bg-white border border-[#0D99FF] rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+      <div class="figma-handle handle-tl"></div>
+      <div class="figma-handle handle-tr"></div>
+      <div class="figma-handle handle-bl"></div>
+      <div class="figma-handle handle-br"></div>
+      <div class="absolute -top-3.5 left-6 bg-[#0D99FF] text-white text-[11px] font-mono px-3 py-0.5 rounded-sm font-bold flex items-center gap-1.5 shadow-sm">
+        <span>08</span>
+        <span>Frame: Ekstrakurikuler Bola Voli</span>
+      </div>
+
+      <!-- Header Artefak -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E5E5]">
+        <div>
+          <span class="font-mono text-xs text-[#0D99FF] font-bold uppercase tracking-wider block">
+            Ekosistem Sekolah • Pembinaan Non-Akademik & Olahraga
+          </span>
+          <h2 class="font-heading font-black text-2xl sm:text-3xl text-[#1E1E1E]">
+            Dokumentasi Kegiatan Non Mengajar (Pendampingan Ekstrakurikuler Bola Voli)
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 bg-blue-50 text-[#0D99FF] border border-[#0D99FF]/30 font-mono text-xs font-bold rounded-sm">
+            2 Dokumentasi Arsip Lapangan
+          </span>
+        </div>
+      </div>
+
+      <!-- Grid 2 Kolom -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Galeri 2 Foto Ekstrakurikuler Bola Voli (Kiri) -->
+        <div class="lg:col-span-7">
+          <div class="preview-embed-box p-4 bg-zinc-100 space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Foto 1 -->
+              <div class="bg-white rounded border border-[#D8D1C5] overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden bg-zinc-200">
+                  <img 
+                    src="LK3%20%26%20UTS/Kegiatan%20Non%20Mengajar%201.jpeg" 
+                    alt="Pendampingan Latihan & Pembinaan Teknik Ekstrakurikuler Bola Voli" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="p-3">
+                  <span class="font-mono text-[10px] text-[#0D99FF] font-bold uppercase block">Dokumentasi 01</span>
+                  <p class="font-body text-xs text-[#1E1E1E] font-semibold mt-0.5">
+                    Pendampingan Latihan & Pembinaan Teknik Ekstrakurikuler Bola Voli
+                  </p>
+                  <a 
+                    href="LK3%20%26%20UTS/Kegiatan%20Non%20Mengajar%201.jpeg" 
+                    target="_blank" 
+                    class="text-[11px] font-mono text-[#0D99FF] hover:underline mt-1 inline-block"
+                  >
+                    Buka Foto Penuh ↗
+                  </a>
+                </div>
+              </div>
+
+              <!-- Foto 2 -->
+              <div class="bg-white rounded border border-[#D8D1C5] overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden bg-zinc-200">
+                  <img 
+                    src="LK3%20%26%20UTS/Kegiatan%20Non%20Mengajar%202.jpeg" 
+                    alt="Aktivitas Sportivitas & Pembiasaan Karakter di Lapangan Bola Voli" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="p-3">
+                  <span class="font-mono text-[10px] text-[#0D99FF] font-bold uppercase block">Dokumentasi 02</span>
+                  <p class="font-body text-xs text-[#1E1E1E] font-semibold mt-0.5">
+                    Aktivitas Sportivitas & Pembiasaan Karakter di Lapangan Bola Voli
+                  </p>
+                  <a 
+                    href="LK3%20%26%20UTS/Kegiatan%20Non%20Mengajar%202.jpeg" 
+                    target="_blank" 
+                    class="text-[11px] font-mono text-[#0D99FF] hover:underline mt-1 inline-block"
+                  >
+                    Buka Foto Penuh ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2.5 bg-white border border-[#D8D1C5] rounded text-xs font-mono text-[#71717A] flex items-center justify-between">
+              <span>Ekstrakurikuler Olahraga Prestasi</span>
+              <span class="text-[#0D99FF] font-semibold">SMP Negeri 5 Purwokerto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis 3 Poin Ringkas (Kanan) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="border-b border-[#0D99FF] pb-2 mb-3">
+            <span class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider">Analisis Kritis Pedagogi</span>
+            <h3 class="font-heading font-black text-lg text-[#1E1E1E]">Kajian Ekstrakurikuler Bola Voli</h3>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>01.</span>
+              <span>Analisis Konteks & Tujuan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Konteks:</strong> Keterlibatan mahasiswa PPL Mandiri dalam pendampingan kegiatan ekstrakurikuler olahraga Bola Voli di lingkungan SMP Negeri 5 Purwokerto.</li>
+              <li>• <strong>Tujuan:</strong> Mengembangkan potensi non-akademik murid, menanamkan nilai sportivitas, disiplin, kerja sama tim, serta mempererat kedekatan emosional guru dan murid di luar jam kelas.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>02.</span>
+              <span>Kelebihan & Kekurangan</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• <strong>Kelebihan:</strong> Membangun relasi interpersonal yang akrab dan menumbuhkan karakter sportivitas serta gotong royong murid di lapangan secara langsung.</li>
+              <li>• <strong>Kekurangan:</strong> Jadwal latihan di sore hari menuntut penyesuaian manajemen energi dan waktu setelah pelaksanaan jam mengajar reguler.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-zinc-50 border border-[#E5E5E5] rounded-lg">
+            <h4 class="font-mono text-xs font-bold text-[#0D99FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>03.</span>
+              <span>Landasan Teori Pedagogi</span>
+            </h4>
+            <ul class="text-xs sm:text-sm text-[#2E2E2E] space-y-1.5 leading-relaxed">
+              <li>• Teori Belajar Sosial (<em>Social Learning Theory</em> - Albert Bandura) melalui keteladanan dan interaksi kelompok.</li>
+              <li>• Teori Perkembangan Karakter Olahraga & Profil Pelajar Pancasila (Dimensi Mandiri & Gotong Royong).</li>
+              <li>• Teori Ekologi Sekolah Bronfenbrenner (<em>Mesosystem School Environment</em>).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="bg-white border-t border-[#D8D1C5] py-10 text-xs font-mono text-[#71717A] mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold text-[#1E1E1E]">© 2026 EPORTFOLIO 1 PPL Mandiri — Fadilatul Fajri, S.Pd.</p>
+        <p class="text-[11px] text-[#71717A] mt-0.5">Program Studi Pendidikan Profesi Guru (PPKn) Universitas Muhammadiyah Purwokerto</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="text-[#0D99FF] font-bold hover:underline">← Kembali ke Halaman Utama</a>
+        <a href="#top" class="text-[#1E1E1E] hover:text-[#0D99FF] font-bold transition-colors">Ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Interactive Tab Switcher Script for Penilaian GP & Nav Scroll -->
+  <script>
+    // Tab switch between Penilaian Modul & Penilaian Praktik
+    function switchGpDoc(type) {
+      const iframe = document.getElementById('gp-doc-iframe');
+      const title = document.getElementById('gp-doc-title');
+      const link = document.getElementById('gp-doc-link');
+      const btnModul = document.getElementById('btn-gp-modul');
+      const btnPraktik = document.getElementById('btn-gp-praktik');
+
+      if (type === 'modul') {
+        iframe.src = 'LK3%20%26%20UTS/Penilaian%20Modul%20GP%20Siklus%201.pdf';
+        title.innerText = 'Penilaian Modul GP Siklus 1.pdf';
+        link.href = 'LK3%20%26%20UTS/Penilaian%20Modul%20GP%20Siklus%201.pdf';
+        btnModul.className = 'px-3 py-1 font-mono text-xs font-bold rounded transition-all bg-[#0D99FF] text-white shadow-sm';
+        btnPraktik.className = 'px-3 py-1 font-mono text-xs font-bold rounded transition-all text-[#1E1E1E] hover:bg-white';
+      } else {
+        iframe.src = 'LK3%20%26%20UTS/Penilaian%20GP%20Praktik%20Siklus%201.pdf';
+        title.innerText = 'Penilaian GP Praktik Siklus 1.pdf';
+        link.href = 'LK3%20%26%20UTS/Penilaian%20GP%20Praktik%20Siklus%201.pdf';
+        btnPraktik.className = 'px-3 py-1 font-mono text-xs font-bold rounded transition-all bg-[#0D99FF] text-white shadow-sm';
+        btnModul.className = 'px-3 py-1 font-mono text-xs font-bold rounded transition-all text-[#1E1E1E] hover:bg-white';
+      }
+    }
+
+    // Scroll Navbar Kotak Tumpul -> Oval Menggantung
+    window.addEventListener('scroll', () => {
+      const navWrapper = document.getElementById('main-nav-wrapper');
+      if (navWrapper) {
+        if (window.scrollY > 40) {
+          navWrapper.classList.add('is-scrolled');
+        } else {
+          navWrapper.classList.remove('is-scrolled');
+        }
+      }
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const mobileTrigger = document.getElementById('mobile-menu-trigger');
+    const mobileMenu = document.getElementById('mobile-nav-menu');
+    if (mobileTrigger && mobileMenu) {
+      mobileTrigger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
